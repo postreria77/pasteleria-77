@@ -1,5 +1,7 @@
-# La Pastelería de La Postrería 77
-Este sitio web será desarrollado con la Tecnología de Astro.js para tener una gran optimización de velocidad y utilizar la arquitectura de "Islas" en donde inyectaremos JavaScript solo cuando sea necesario.
+# La Pasteleria de La Postreria 77
 
-## Funcionalidad
-La aqruitectura sobre la que se contruye el sitio nos permitirá mantenerlo con un bajo peso y con la flexibilidad de realizar algún tipo de blog o páginas de ventas simples.
+Los pasteles de La Postreria 77 ahora disponibles siempre en nuestras sucursales.
+
+## Configuración
+
+Utilizamos Astro JS como meta framework para manejar el routing y la administración de archivos y componentes. Se utilizará Solid JS para añadir islas de interactividad en el sitio.

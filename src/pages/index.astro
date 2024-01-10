@@ -1,5 +1,36 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Slider from '../components/Slider.jsx';
+
 ---
 
-<h1>This will become the new page for:</h1>
-<p>La Pasteleria de La Postreria 77</p>
+<Layout title="La Pasteleria de La Postreria.">
+	<main>
+		<div>
+			<h1>La Pasteleria de La Postreria 77</h1>
+			<p>Este repositorio se convertirá en la Landing Page de la pastelería de la postreria, utilizando Astro JS como meta framework y Solid JS para agregar reactividad.</p>
+		</div>
+		<Slider client:load />
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	div p {
+		margin-top: 0.5rem;
+		text-align: center;
+		max-width: 600px;
+	}
+</style>
