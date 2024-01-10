@@ -1,36 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Slider from '../components/Slider.jsx';
+import Navbar from '../components/Navbar.astro';
 
 ---
 
 <Layout title="La Pasteleria de La Postreria.">
+	<Navbar />
 	<main>
-		<div>
-			<h1>La Pasteleria de La Postreria 77</h1>
-			<p>Este repositorio se convertirá en la Landing Page de la pastelería de la postreria, utilizando Astro JS como meta framework y Solid JS para agregar reactividad.</p>
-		</div>
-		<Slider client:load />
+		<header>
+			<div class="header-outline"/>
+		</header>
+		<!-- <Slider client:load /> -->
 	</main>
 </Layout>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100vh;
+	header {
+		position: relative;
+		min-height: 100dvh;
+		width: 100%;
 	}
-	div {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	div p {
-		margin-top: 0.5rem;
-		text-align: center;
-		max-width: 600px;
+	.header-outline {
+		position: absolute;
+		inset: calc(var(--page-padding) / 2);
+		border: 1px solid ;
 	}
 </style>

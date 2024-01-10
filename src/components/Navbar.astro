@@ -1,0 +1,103 @@
+---
+const links = [
+    {
+        label: 'Nosotros',
+        url: '/',
+    },
+    {
+        label: 'Productos',
+        url: '/',
+    },
+    {
+        label: 'Sucursales',
+        url: '/',
+    },
+    {
+        label: 'Contacto',
+        url: '/',
+    },
+]
+---
+
+<nav>
+    <div class="container">
+        <div class="logo-holder">
+            <img src="logo.svg" alt="Logo de la marca">
+            <h1>*Pasteles, Panqués y Artículos de Fiesta</h1>
+        </div>
+        <ul>
+           
+            {links.map((link) => (
+        <li>
+            <span>→</span>
+            <a href={link.url}>{link.label}</a>
+        </li>
+    ))}
+        </ul>
+    </div>
+</nav>
+
+<style>
+    nav {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+    }
+    .container {
+        display: flex;
+        padding-left: calc(var(--page-padding) * 1.25);
+        padding-right: calc(var(--page-padding) * 1.25);
+        justify-content: space-between;
+        align-items: start;
+    }
+    .logo-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .logo-holder img {
+        width: 32rem;
+    }
+    h1 {
+        font-size: 1.25rem;
+    }
+    ul, li, span, a{
+        transition: opacity 0.2s ease-in-out;
+    }
+    ul {
+        display: flex;
+        align-items: start;
+        gap: 3rem;
+        list-style: none;
+    }
+    ul:hover li:not(:hover) {
+        opacity: 0.5;
+    }
+    li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        cursor: pointer;
+        opacity: 0.85;
+    }
+    li:hover {
+        opacity: 1;
+    }
+    li:hover span {
+        display: block;
+    }
+    span {
+        display: none;
+        position: absolute;
+        left: -1.5rem;
+        font-size: 1rem;
+    }
+    a {
+        text-decoration: none;
+        color: hsl(var(--light-1));
+        font-weight: 300;
+        font-size: 1.25rem;
+    }
+</style>
