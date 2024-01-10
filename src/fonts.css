@@ -1,0 +1,32 @@
+/* Objectiviy Font Family Import */
+@font-face {
+  font-family: "Objectivity";
+  src: url("/fonts/objectivity-light.otf") format("otf");
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Objectivity";
+  src: url("/fonts/objectivity-medium.otf") format("otf");
+  font-weight: medium;
+  font-style: normal;
+}
+/* Circular Font Family Import */
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/circular-medium.ttf") format("ttf");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/circular-bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/circular-black.ttf") format("ttf");
+  font-weight: black;
+  font-style: normal;
+}
