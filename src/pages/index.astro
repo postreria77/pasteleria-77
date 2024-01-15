@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Slider from '../components/Slider.jsx';
+
 import Navbar from '../components/Navbar.astro';
+import ProducsSlider from '../components/ProductsSlider/ProductsSlider.jsx';
 
 import { Image } from 'astro:assets';
 import headerImage from '../assets/header-image.png';
@@ -30,7 +31,7 @@ import headerImage from '../assets/header-image.png';
 				</div>
 			</div>
 		</section>
-		<!-- <Slider client:load /> -->
+		<ProducsSlider client:load />
 	</main>
 </Layout>
 

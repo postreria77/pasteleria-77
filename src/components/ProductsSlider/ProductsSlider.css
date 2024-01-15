@@ -1,0 +1,19 @@
+.tab-buttons-holder {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.tab-button {
+  background: transparent;
+  padding: 1rem 1.5rem;
+  border: 1px solid #fff;
+  font-weight: 300;
+  color: #fff;
+  font-family: inherit;
+}
+.active-tab-button {
+  background: #fff;
+  color: #000;
+  border: 1px solid transparent;
+}
