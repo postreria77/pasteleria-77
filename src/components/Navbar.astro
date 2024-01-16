@@ -19,11 +19,11 @@ const links = [
 ]
 ---
 
-<nav>
-    <div class="container">
+<nav class="nav">
+    <div class="container nav-container">
         <div class="logo-holder">
-            <img src="logo.svg" alt="Logo de la marca">
-            <h1>*Pasteles, Panqués y Artículos de Fiesta</h1>
+            <img src="logo.svg" alt="Logo de la marca" class="logo">
+            <h1 id="main-title">*Pasteles, Panqués y Artículos de Fiesta</h1>
         </div>
         <ul>
            
@@ -43,7 +43,7 @@ const links = [
         z-index: 100;
         width: 100%;
     }
-    .container {
+    .nav-container {
         display: flex;
         padding-left: calc(var(--page-padding) * 1.25);
         padding-right: calc(var(--page-padding) * 1.25);
@@ -55,10 +55,13 @@ const links = [
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+        flex-shrink: 1;
+        flex-grow: 0;
     }
-    .logo-holder img {
+    .logo {
         width: 28rem;
     }
+
     h1 {
         font-size: 1rem;
     }
