@@ -1,0 +1,46 @@
+{
+  "pasteles": [
+    {
+      "name": "Cheesecake Tortuga",
+      "img": {
+        "src": "./products/cheesecake-tortuga.png",
+        "alt": "Pastel Cheesecake Tortuga Tradicional"
+      },
+      "anytime": false
+    },
+    {
+      "name": "Red Velvet",
+      "img": {
+        "src": "./products/red-velvet.png",
+        "alt": "Pastel Red Velvet Tradicional"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Ferrero",
+      "img": {
+        "src": "./products/ferrero.png",
+        "alt": "Pastel Ferrero Tradicional"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Charol",
+      "img": {
+        "src": "./products/charol.png",
+        "alt": "Pastel Charol Tradicional"
+      },
+      "anytime": true
+    }
+  ],
+  "decoraciones": [
+    {
+      "name": "Decoración",
+      "img": {
+        "src": "./products/charol.png",
+        "alt": "Decoración"
+      },
+      "anytime": true
+    }
+  ]
+}

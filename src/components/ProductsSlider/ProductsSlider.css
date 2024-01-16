@@ -17,3 +17,11 @@
   color: #000;
   border: 1px solid transparent;
 }
+ul {
+  list-style: none;
+  padding: unset;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: scroll;
+  margin-bottom: 1rem;
+}
