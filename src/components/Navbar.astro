@@ -73,6 +73,7 @@ const links = [
         align-items: start;
         gap: 3rem;
         list-style: none;
+        overflow: visible;
     }
     ul:hover li:not(:hover) {
         opacity: 0.5;
@@ -84,9 +85,11 @@ const links = [
         position: relative;
         cursor: pointer;
         opacity: 0.85;
+        transition: all 0.2s ease-out;
     }
     li:hover {
         opacity: 1;
+        transform: translateY(-2px);
     }
     li:hover span {
         display: block;
