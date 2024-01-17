@@ -31,6 +31,14 @@
         "alt": "Pastel Charol Tradicional"
       },
       "anytime": true
+    },
+    {
+      "name": "Cheesecake Tortuga",
+      "img": {
+        "src": "./products/cheesecake-tortuga.png",
+        "alt": "Pastel Cheesecake Tortuga Tradicional"
+      },
+      "anytime": false
     }
   ],
   "decoraciones": [
@@ -39,6 +47,38 @@
       "img": {
         "src": "./products/charol.png",
         "alt": "Decoración"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Ferrero",
+      "img": {
+        "src": "./products/ferrero.png",
+        "alt": "Pastel Ferrero Tradicional"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Charol",
+      "img": {
+        "src": "./products/charol.png",
+        "alt": "Pastel Charol Tradicional"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Ferrero",
+      "img": {
+        "src": "./products/ferrero.png",
+        "alt": "Pastel Ferrero Tradicional"
+      },
+      "anytime": true
+    },
+    {
+      "name": "Charol",
+      "img": {
+        "src": "./products/charol.png",
+        "alt": "Pastel Charol Tradicional"
       },
       "anytime": true
     }

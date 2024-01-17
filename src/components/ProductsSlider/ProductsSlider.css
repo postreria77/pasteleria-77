@@ -28,11 +28,39 @@
   background: #fff;
   color: #000;
 }
-ul {
-  list-style: none;
-  padding: unset;
+swiper-container::part(wrapper) {
   display: flex;
-  gap: 1.5rem;
-  overflow-x: scroll;
-  margin-bottom: 1rem;
+  align-items: stretch;
+}
+
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  background-color: red;
+}
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: auto;
+}
+swiper-slide img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+swiper-slide p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.slide-comp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  background-color: hsla(0, 0%, 100%, 0.02);
+  flex-grow: 1;
 }
