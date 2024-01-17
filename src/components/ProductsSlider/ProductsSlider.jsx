@@ -7,7 +7,7 @@ import { register } from "swiper/element/bundle";
 register();
 
 function ProductsSlider() {
-  const [activeTab, setActiveTab] = createSignal("pasteles");
+  const [activeTab, setActiveTab] = createSignal(Object.keys(productsData)[0]);
   const handleTabChange = (e) => {
     setActiveTab(e.target.value);
   };
@@ -15,25 +15,18 @@ function ProductsSlider() {
   return (
     <section>
       <div class="container">
-        {/* Buttons holder that simulates tab functionality */}
+        {/* Mapping the buttons to simulate tab functionality */}
         <div class="tab-buttons-holder">
-          <button
-            class={`tab-button ${
-              activeTab() === "pasteles" ? "active-tab-button" : undefined
-            }`}
-            value="pasteles"
-            onClick={handleTabChange}>
-            Pasteles y Panqués
-          </button>
-          <button
-            class={`tab-button ${
-              activeTab() === "decoraciones" ? "active-tab-button" : undefined
-            }`}
-            value="decoraciones"
-            onClick={handleTabChange}>
-            Ideas de Decoración
-          </button>
-          <p>Active: {activeTab()}</p>
+          {Object.keys(productsData).map((key) => (
+            <button
+              class={`tab-button ${
+                activeTab() === key ? "active-tab-button" : ""
+              }`}
+              value={key}
+              onClick={handleTabChange}>
+              {key}
+            </button>
+          ))}
         </div>
         {/* Slider mapped to get the data from the json file */}
         <swiper-container

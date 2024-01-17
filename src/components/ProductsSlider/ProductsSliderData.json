@@ -1,5 +1,5 @@
 {
-  "pasteles": [
+  "Pasteles y Panqués": [
     {
       "name": "Cheesecake Tortuga",
       "img": {
@@ -41,7 +41,7 @@
       "anytime": false
     }
   ],
-  "decoraciones": [
+  "Ideas de Decoración": [
     {
       "name": "Decoración",
       "img": {
