@@ -1,11 +1,13 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 let navAnimation = gsap.timeline({
   scrollTrigger: {
     trigger: ".header-outline",
     start: "top top",
-    end: "bottom top",
+    end: "bottom center",
     scrub: 1,
   },
 });
@@ -14,7 +16,7 @@ navAnimation
   .to("#main-title", {
     opacity: 0,
     display: "none",
-    duration: 0.15,
+    duration: 0.05,
     ease: "none",
   })
   .to(".nav", { backgroundColor: "hsl(0, 0%, 0%)" }, "<")
@@ -23,8 +25,8 @@ navAnimation
     {
       paddingTop: "1.5rem",
       paddingBottom: "1.5rem",
-      paddingLeft: "var(--page-padding)",
-      paddingRight: "var(--page-padding)",
+      paddingLeft: "3rem",
+      paddingRight: "3rem",
     },
     "<"
   )
