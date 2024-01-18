@@ -68,7 +68,13 @@ function ProductsSlider() {
       </div>
 
       {/* Slider mapped to get the data from the json file */}
-      <swiper-container slides-per-view={4} space-between={16}>
+      <swiper-container
+        slides-per-view={4}
+        space-between={16}
+        long-swipes={true}
+        keyboard={true}
+        mousewheel-force-to-axis={true}
+        speed={500}>
         {productsData[activeTab()].map((product) => {
           return (
             <swiper-slide class="product-card">

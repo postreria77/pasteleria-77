@@ -2,29 +2,29 @@
 const links = [
     {
         label: 'Nosotros',
-        url: '/',
+        url: '/#about',
     },
     {
         label: 'Productos',
-        url: '/',
+        url: '/#products',
     },
     {
         label: 'Sucursales',
-        url: '/',
+        url: '/#locations',
     },
     {
         label: 'Contacto',
-        url: '/',
+        url: '/#contact',
     },
 ]
 ---
 
 <nav class="nav">
     <div class="container nav-container">
-        <div class="logo-holder">
+        <a class="logo-holder" href="/" >
             <img src="logo.svg" alt="Logo de la marca" class="logo">
             <h1 id="main-title">*Pasteles, Panqués y Artículos de Fiesta</h1>
-        </div>
+        </a>
         <ul>
            
             {links.map((link) => (
