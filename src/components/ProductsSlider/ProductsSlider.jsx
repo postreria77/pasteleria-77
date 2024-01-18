@@ -1,5 +1,5 @@
 import "./ProductsSlider.css";
-import { createSignal } from "solid-js";
+import { onMount, createSignal, createEffect, onCleanup } from "solid-js";
 import productsData from "./ProductsSliderData.json";
 //Swiper register
 import { register } from "swiper/element/bundle";
@@ -10,6 +10,45 @@ function ProductsSlider() {
   const [activeTab, setActiveTab] = createSignal(Object.keys(productsData)[0]);
   const handleTabChange = (e) => {
     setActiveTab(e.target.value);
+  };
+
+  // Inside your ProductsSlider function...
+  let swiperInstance;
+  const [swiper, setSwiper] = createSignal(swiperInstance);
+  let [isBeginning, setIsBeginning] = createSignal(true);
+  let [isEnd, setIsEnd] = createSignal(false);
+
+  onMount(async () => {
+    await customElements.whenDefined("swiper-container");
+    const swiperContainer = document.querySelector("swiper-container");
+    setSwiper(swiperContainer.swiper);
+
+    const swiperUpdate = () => {
+      setIsBeginning(swiperContainer.swiper.isBeginning);
+      setIsEnd(swiperContainer.swiper.isEnd);
+    };
+
+    swiperContainer.swiper.on("slideChange", swiperUpdate);
+    onCleanup(() => swiperContainer.swiper.off("slideChange", swiperUpdate));
+  });
+
+  createEffect(() => {
+    if (swiper()) {
+      setIsBeginning(swiper().isBeginning);
+      setIsEnd(swiper().isEnd);
+    }
+  });
+
+  const handleNextSlide = () => {
+    if (!isEnd()) {
+      swiper().slideNext();
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (!isBeginning()) {
+      swiper().slidePrev();
+    }
   };
 
   return (
@@ -29,10 +68,7 @@ function ProductsSlider() {
           ))}
         </div>
         {/* Slider mapped to get the data from the json file */}
-        <swiper-container
-          slides-per-view={4}
-          space-between={16}
-          navigation={true}>
+        <swiper-container slides-per-view={4} space-between={16}>
           {productsData[activeTab()].map((product) => {
             return (
               <swiper-slide class="product-card">
@@ -53,6 +89,15 @@ function ProductsSlider() {
             );
           })}
         </swiper-container>
+        {/* Buttons to navigate slider */}
+        <div class="slide-navigation">
+          <button onClick={handlePrevSlide} disabled={isBeginning()}>
+            <img src="./arrow-left.svg" alt="Previous slide icon" />
+          </button>
+          <button onClick={handleNextSlide} disabled={isEnd()}>
+            <img src="./arrow-left.svg" alt="Next slide icon" />
+          </button>
+        </div>
       </div>
     </section>
   );

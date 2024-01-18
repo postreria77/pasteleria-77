@@ -32,10 +32,46 @@ swiper-container::part(wrapper) {
   display: flex;
   align-items: stretch;
 }
-
-swiper-container::part(button-prev),
-swiper-container::part(button-next) {
-  background-color: red;
+swiper-container::part(container)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 15rem;
+  background: linear-gradient(
+    to left,
+    hsla(0, 0%, 6%, 1) 0%,
+    hsla(0, 0%, 6%, 0) 100%
+  );
+}
+.slide-navigation {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.slide-navigation button {
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+.slide-navigation button:hover {
+  background-color: hsla(0, 0%, 100%, 0.15);
+}
+.slide-navigation button:active {
+  transform: translateY(2px);
+  background-color: hsla(0, 0%, 100%, 0.8);
+}
+.slide-navigation button:nth-child(2) img {
+  transform: rotate(180deg);
+}
+.slide-navigation button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 swiper-slide {
   display: flex;
