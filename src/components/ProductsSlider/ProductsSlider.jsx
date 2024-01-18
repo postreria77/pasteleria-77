@@ -6,7 +6,7 @@ import { register } from "swiper/element/bundle";
 
 register();
 
-function ProductsSlider() {
+export default function ProductsSlider() {
   const [activeTab, setActiveTab] = createSignal(Object.keys(productsData)[0]);
   const handleTabChange = (e) => {
     setActiveTab(e.target.value);
@@ -108,5 +108,3 @@ function ProductsSlider() {
     </>
   );
 }
-
-export default ProductsSlider;
