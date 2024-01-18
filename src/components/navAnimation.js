@@ -19,7 +19,7 @@ navAnimation
     duration: 0.05,
     ease: "none",
   })
-  .to(".nav", { backgroundColor: "hsl(0, 0%, 0%)" }, "<")
+  .to(".nav", { backgroundColor: "hsl(0, 0%, 0%)", duration: "0.1" }, "<")
   .to(
     ".nav-container",
     {

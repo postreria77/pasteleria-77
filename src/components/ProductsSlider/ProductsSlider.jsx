@@ -52,54 +52,54 @@ function ProductsSlider() {
   };
 
   return (
-    <section>
-      <div class="container">
-        {/* Mapping the buttons to simulate tab functionality */}
-        <div class="tab-buttons-holder">
-          {Object.keys(productsData).map((key) => (
-            <button
-              class={`tab-button ${
-                activeTab() === key ? "active-tab-button" : ""
-              }`}
-              value={key}
-              onClick={handleTabChange}>
-              {key}
-            </button>
-          ))}
-        </div>
-        {/* Slider mapped to get the data from the json file */}
-        <swiper-container slides-per-view={4} space-between={16}>
-          {productsData[activeTab()].map((product) => {
-            return (
-              <swiper-slide class="product-card">
-                <img
-                  src={product.img.src}
-                  alt={product.img.alt}
-                  class="slide-image"
-                />
-                <div class="slide-comp">
-                  <h5>{product.name}</h5>
-                  <p>
-                    {product.anytime
-                      ? "* Disponible en tamaño tradicional y The Anytime Cake"
-                      : "* Disponible en tamaño tradicional"}
-                  </p>
-                </div>
-              </swiper-slide>
-            );
-          })}
-        </swiper-container>
-        {/* Buttons to navigate slider */}
-        <div class="slide-navigation">
-          <button onClick={handlePrevSlide} disabled={isBeginning()}>
-            <img src="./arrow-left.svg" alt="Previous slide icon" />
+    <>
+      {/* Mapping the buttons to simulate tab functionality */}
+      <div class="tab-buttons-holder">
+        {Object.keys(productsData).map((key) => (
+          <button
+            class={`tab-button ${
+              activeTab() === key ? "active-tab-button" : ""
+            }`}
+            value={key}
+            onClick={handleTabChange}>
+            {key}
           </button>
-          <button onClick={handleNextSlide} disabled={isEnd()}>
-            <img src="./arrow-left.svg" alt="Next slide icon" />
-          </button>
-        </div>
+        ))}
       </div>
-    </section>
+
+      {/* Slider mapped to get the data from the json file */}
+      <swiper-container slides-per-view={4} space-between={16}>
+        {productsData[activeTab()].map((product) => {
+          return (
+            <swiper-slide class="product-card">
+              <img
+                src={product.img.src}
+                alt={product.img.alt}
+                class="slide-image"
+              />
+              <div class="slide-comp">
+                <h5>{product.name}</h5>
+                <p>
+                  {product.anytime
+                    ? "* Disponible en tamaño tradicional y The Anytime Cake"
+                    : "* Disponible en tamaño tradicional"}
+                </p>
+              </div>
+            </swiper-slide>
+          );
+        })}
+      </swiper-container>
+
+      {/* Buttons to navigate slider */}
+      <div class="slide-navigation">
+        <button onClick={handlePrevSlide} disabled={isBeginning()}>
+          <img src="./arrow-left.svg" alt="Previous slide icon" />
+        </button>
+        <button onClick={handleNextSlide} disabled={isEnd()}>
+          <img src="./arrow-left.svg" alt="Next slide icon" />
+        </button>
+      </div>
+    </>
   );
 }
 

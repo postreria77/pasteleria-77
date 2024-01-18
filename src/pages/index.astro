@@ -6,7 +6,6 @@ import ProducsSlider from '../components/ProductsSlider/ProductsSlider.jsx';
 
 import { Image } from 'astro:assets';
 import headerImage from '../assets/header-image.png';
-import SwiperTest from '../components/SwiperTest';
 
 ---
 
@@ -32,7 +31,11 @@ import SwiperTest from '../components/SwiperTest';
 				</div>
 			</div>
 		</section>
-		<ProducsSlider client:load />
+		<section>
+			<div class="container">
+				<ProducsSlider client:load />
+			</div>
+		</section>
 	</main>
 	<!-- GSAP animation script -->
 	<script src="../components/navAnimation.js"></script>
