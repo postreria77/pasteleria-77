@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 
 import Navbar from '../components/Navbar.astro';
-import ProducsSlider from '../components/ProductsSlider/ProductsSlider.jsx';
+import ProducsSlider from '../components/ProductsSlider/ProductsSlider';
+import Locations from '../components/Locations/Locations';
 
 import { Image } from 'astro:assets';
 import headerImage from '../assets/header-image.png';
@@ -20,7 +21,7 @@ import headerImage from '../assets/header-image.png';
 			</div>
 			<div class="header-image-holder">
 				
-				<Image src={headerImage} alt="Panqué de nuez" class="header-image"/>
+				<Image src={headerImage} alt="Panqué de nuez" class="header-image" loading={'eager'}/>
 			</div>
 		</header>
 		<section id="about">
@@ -39,6 +40,7 @@ import headerImage from '../assets/header-image.png';
 		<section id="locations">
 			<div class="container">
 				<h3>Nuestras Sucursales</h3>
+				<Locations client:load />
 			</div>
 		</section>
 	</main>
