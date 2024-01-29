@@ -3,7 +3,7 @@
     {
       "name": "Panqué Nutella",
       "img": {
-        "src": "./products/pasteles/panque-nutella.webp",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Panqué Nutella tamaño Tradicional"
       },
       "anytime": false
@@ -11,7 +11,7 @@
     {
       "name": "Panqué Toffee",
       "img": {
-        "src": "./products/pasteles/panque-toffee.webp",
+        "src": "./images/products/pasteles/panque-toffee.webp",
         "alt": "Panqué Toffee tamaño Tradicional"
       },
       "anytime": false
@@ -19,7 +19,7 @@
     {
       "name": "Panqué de Nuez",
       "img": {
-        "src": "./products/pasteles/panque-nuez.webp",
+        "src": "./images/products/pasteles/panque-nuez.webp",
         "alt": "Panqué de Nuez tamaño Tradicional"
       },
       "anytime": false
@@ -27,7 +27,7 @@
     {
       "name": "Red Velvet",
       "img": {
-        "src": "./products/pasteles/red-velvet.webp",
+        "src": "./images/products/pasteles/red-velvet.webp",
         "alt": "Pastel Red Velvet tamaño Tradicional"
       },
       "anytime": true
@@ -35,7 +35,7 @@
     {
       "name": "Ferrero",
       "img": {
-        "src": "./products/pasteles/ferrero.webp",
+        "src": "./images/products/pasteles/ferrero.webp",
         "alt": "Pastel Ferrero tamaño Tradicional"
       },
       "anytime": true
@@ -43,7 +43,7 @@
     {
       "name": "Cheesecake Tortuga",
       "img": {
-        "src": "./products/pasteles/cheesecake-tortuga.webp",
+        "src": "./images/products/pasteles/cheesecake-tortuga.webp",
         "alt": "Pastel Cheesecake Tortuga tamaño Tradicional"
       },
       "anytime": false
@@ -51,7 +51,7 @@
     {
       "name": "Charol",
       "img": {
-        "src": "./products/pasteles/charol.webp",
+        "src": "./images/products/pasteles/charol.webp",
         "alt": "Pastel Charol tamaño Tradicional"
       },
       "anytime": true
@@ -59,7 +59,7 @@
     {
       "name": "Carlotta",
       "img": {
-        "src": "./products/pasteles/carlotta.webp",
+        "src": "./images/products/pasteles/carlotta.webp",
         "alt": "Pastel Carlotta tamaño Tradicional"
       },
       "anytime": true
@@ -67,7 +67,7 @@
     {
       "name": "Cheesecake Brownie",
       "img": {
-        "src": "./products/pasteles/cheesecake-brownie.webp",
+        "src": "./images/products/pasteles/cheesecake-brownie.webp",
         "alt": "Pastel Cheesecake Brownie tamaño Tradicional"
       },
       "anytime": true
@@ -75,7 +75,7 @@
     {
       "name": "Almond Toffee",
       "img": {
-        "src": "./products/pasteles/almond-toffee.webp",
+        "src": "./images/products/pasteles/almond-toffee.webp",
         "alt": "Pastel Almond Toffee tamaño Tradicional"
       },
       "anytime": false
@@ -83,7 +83,7 @@
     {
       "name": "Matilda",
       "img": {
-        "src": "./products/pasteles/matilda.webp",
+        "src": "./images/products/pasteles/matilda.webp",
         "alt": "Pastel Matilda tamaño Tradicional"
       },
       "anytime": true
@@ -91,7 +91,7 @@
     {
       "name": "Cheesecake Plátano",
       "img": {
-        "src": "./products/pasteles/cheesecake-platano.webp",
+        "src": "./images/products/pasteles/cheesecake-platano.webp",
         "alt": "Pastel Cheesecake Plátano tamaño Tradicional"
       },
       "anytime": true
@@ -99,7 +99,7 @@
     {
       "name": "Lady Berry",
       "img": {
-        "src": "./products/pasteles/lady-berry.webp",
+        "src": "./images/products/pasteles/lady-berry.webp",
         "alt": "Pastel Lady Berry tamaño Tradicional"
       },
       "anytime": true
@@ -107,7 +107,7 @@
     {
       "name": "Zanahoria",
       "img": {
-        "src": "./products/pasteles/zanahoria.webp",
+        "src": "./images/products/pasteles/zanahoria.webp",
         "alt": "Pastel Zanahoria tamaño Tradicional"
       },
       "anytime": true
@@ -115,7 +115,7 @@
     {
       "name": "Pecan Pie",
       "img": {
-        "src": "./products/pasteles/pecan-pie.webp",
+        "src": "./images/products/pasteles/pecan-pie.webp",
         "alt": "Pastel Pecan Pie tamaño Tradicional"
       },
       "anytime": true
@@ -125,7 +125,7 @@
     {
       "name": "Decoración",
       "img": {
-        "src": "./products/charol.png",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Decoración"
       },
       "anytime": true
@@ -133,7 +133,7 @@
     {
       "name": "Ferrero",
       "img": {
-        "src": "./products/ferrero.png",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Pastel Ferrero Tradicional"
       },
       "anytime": true
@@ -141,7 +141,7 @@
     {
       "name": "Charol",
       "img": {
-        "src": "./products/charol.png",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Pastel Charol Tradicional"
       },
       "anytime": true
@@ -149,7 +149,7 @@
     {
       "name": "Ferrero",
       "img": {
-        "src": "./products/ferrero.png",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Pastel Ferrero Tradicional"
       },
       "anytime": true
@@ -157,7 +157,7 @@
     {
       "name": "Charol",
       "img": {
-        "src": "./products/charol.png",
+        "src": "./images/products/pasteles/panque-nutella.webp",
         "alt": "Pastel Charol Tradicional"
       },
       "anytime": true

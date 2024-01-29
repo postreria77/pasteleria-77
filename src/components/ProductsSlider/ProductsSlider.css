@@ -23,6 +23,7 @@
   background: #fff;
   color: #000;
   border: 1px solid transparent;
+  opacity: 100%;
 }
 .active-tab-button:hover {
   background: #fff;
