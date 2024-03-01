@@ -1,16 +1,9 @@
 ---
 import { type ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import type { Product } from "../utils/products.ts";
 
-interface Props {
-  name: string;
-  description: string;
-  imagePath: string;
-  type: "cake" | "Bread";
-  anytime?: boolean;
-}
-
-const { name, description, imagePath, type, anytime } = Astro.props;
+const { name, description, imagePath, type, anytime } = Astro.props as Product;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/products/*.{jpeg,jpg,png,gif,webp}"
 );
@@ -19,9 +12,18 @@ if (!images[imagePath]) {
 }
 ---
 
-<li>
-  <Image src={images[imagePath]()} alt={name} />
-  <h4>{name}</h4>
-  <p>{description}</p>
-  {type === "cake" && anytime && <p>Anytime</p>}
+<li class="flex flex-col border border-light-2 border-opacity-50">
+  <Image src={images[imagePath]()} alt={name} quality={35} />
+  <div
+    class="border-t border-light-2 border-opacity-50 bg-light-2 bg-opacity-5 flex flex-col flex-grow justify-between gap-4 p-2">
+    <div>
+      <h4 class="text-lg">{name}</h4>
+      <p class="text-xs leading-relaxed text-light-2">{description}</p>
+    </div>
+    {
+      type === "cake" && (
+        <span class="text-[0.5rem] font-medium">{`*Disponible en tamaño Tradicional${anytime ? " y Anytime." : "."}`}</span>
+      )
+    }
+  </div>
 </li>

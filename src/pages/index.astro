@@ -4,10 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Locations from "../components/Locations/Locations";
 
-import ProductCard from "../components/ProductCard.astro";
-
 import { Image } from "astro:assets";
 import headerImage from "../assets/header-image.png";
+
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../utils/products";
 ---
 
 <Layout title="La Pasteleria de La Postreria.">
@@ -45,13 +46,20 @@ import headerImage from "../assets/header-image.png";
     </section>
     <section id="products">
       <div class="container">
-        <ProductCard
-          name="Red Velvet"
-          description="Pan de cocoa roja con chispas de chocolate semiamargo, ganache de chocolate y betún de vainilla a base de Philadelphia."
-          type="cake"
-          anytime={true}
-          imagePath="/src/assets/products/red-velvet.webp"
-        />
+        <h3 class="mb-8">Pasteles y Panqués</h3>
+        <ul class="grid grid-cols-4 gap-4">
+          {
+            products.map((product) => (
+              <ProductCard
+                name={product.name}
+                description={product.description}
+                imagePath={product.imagePath}
+                type={product.type}
+                anytime={product.anytime}
+              />
+            ))
+          }
+        </ul>
       </div>
     </section>
     <section id="locations">
@@ -62,7 +70,7 @@ import headerImage from "../assets/header-image.png";
     </section>
   </main>
   <!-- GSAP animation script -->
-  <script src="../components/navAnimation.js"></script>
+  <script src="../utils/navAnimation.js"></script>
 </Layout>
 
 <style>
