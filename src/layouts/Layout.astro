@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Footer from "../components/Footer.astro";
+//import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -18,72 +18,13 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="font-body bg-brand">
     <slot />
-    <Footer />
   </body>
 </html>
 <style is:global>
   :root {
-    /* Color Palette */
-    --dark: 0, 0%, 6%;
-    --light-1: 0, 0%, 90%;
     /* Spacing Scales */
-    --page-padding: 3rem;
-    /* Font Family */
-    --font-family: "Objectivity", sans-serif;
-  }
-  html {
-    font-family: Objectivity, sans-serif;
-    background: hsl(var(--dark));
-    color: hsl(var(--light-1));
-    scroll-behavior: smooth;
-  }
-  body {
-    margin: 0;
-    width: 100%;
-    overscroll-behavior: none;
-    font-weight: light;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: bold;
-    margin: unset;
-  }
-  h1 {
-    font-weight: 500;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-  }
-  h2 {
-    font-weight: 700;
-    font-size: 3rem;
-    text-transform: uppercase;
-  }
-  h3 {
-    font-weight: 500;
-    font-size: 2.25rem;
-  }
-  h4 {
-    font-weight: 500;
-    font-size: 1.5rem;
-  }
-  h5 {
-    font-weight: 500;
-    font-size: 1.25rem;
-  }
-  p {
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.5;
-    margin: unset;
-  }
-  .container {
-    margin: 0 auto;
-    padding: var(--page-padding);
+    --page-spacing: 3rem;
   }
 </style>
