@@ -1,24 +1,44 @@
 ---
+import { Icon } from "astro-icon/components";
+
+import { Image } from "astro:assets";
+import logo from "../assets/logo-h.svg";
+
 const links = [
   {
-    label: "Nosotros",
-    url: "/#about",
+    label: "Menú",
+    url: "/menu",
   },
   {
-    label: "Productos",
-    url: "/#products",
+    label: "Ubicaciones",
+    url: "/#ubicaciones",
   },
   {
-    label: "Sucursales",
-    url: "/#locations",
+    label: "Facturación",
+    url: "/",
   },
   {
     label: "Contacto",
-    url: "/#contact",
+    url: "/#contacto",
   },
 ];
 ---
 
-<nav>
-  
+<nav class="py-12 px-16">
+  <div class="flex items-center justify-between">
+    <Icon name="logo" class="h-20 w-48 text-dark" />
+    <menu class="flex gap-8 items-center">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.url}>{link.label}</a>
+          </li>
+        ))
+      }
+      <div class="h-6 w-[2px] bg-dark"></div>
+      <li>
+        <a href="https://lapostreria77.com">La Postreria 77</a>
+      </li>
+    </menu>
+  </div>
 </nav>
