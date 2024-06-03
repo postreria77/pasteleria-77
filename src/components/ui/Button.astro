@@ -39,15 +39,19 @@ const button = cva(
 );
 
 export interface Props
-  extends HTMLAttributes<"button">,
+  extends HTMLAttributes<"a">,
     VariantProps<typeof button> {
-  icon?: string;
+  href?: string;
+  newTab?: boolean;
+  arrow?: boolean;
 }
 
-const { intent = "primary", icon } = Astro.props;
+const { intent = "primary", href, arrow, newTab} = Astro.props;
+
+const target = newTab ? "_blank" : "_self";
 ---
 
-<button class={button({ intent })}>
+<a href={href} target={target} class={button({ intent })}>
   <slot />
-  {icon && <Icon name={icon} class="size-5" />}
-</button>
+  {arrow && <Icon name="arrow" class="size-5" />}
+</a>

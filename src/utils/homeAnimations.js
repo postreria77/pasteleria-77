@@ -13,7 +13,6 @@ const navTl = gsap.timeline({
       start: "10% top",
       end: "12% top",
       scrub: 1,
-      markers: true,
     },
 });
 

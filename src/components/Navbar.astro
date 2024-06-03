@@ -22,7 +22,7 @@ const links = [
 ];
 ---
 
-<nav class="pb-6 pt-8 px-16 sticky top-0 left-0 right-0 w-full bg-brand">
+<nav class="pb-6 pt-8 px-16 sticky top-0 left-0 right-0 w-full bg-brand z-50">
   <div class="flex items-center justify-between">
     <a href="/">
     <Icon name="logo" class="h-14 w-36 origin-top-left" id="navLogo" />
@@ -31,7 +31,7 @@ const links = [
       {
         links.map((link) => <Navlink href={link.url} text={link.label} />)
       }
-      <div class="h-6 w-[2px] bg-dark"></div>
+      <Icon name="separator" aria-hidden="true" />
       <Navlink href="https://lapostreria77.com" text="La Postreria 77" />
     </menu>
   </div>

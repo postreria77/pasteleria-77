@@ -16,6 +16,9 @@ export default {
       spacing: {
         "page": "var(--page-spacing)",
       },
+      backgroundImage: {
+        "hero": "url('/images/header-bg.png')",
+      },
     },
     plugins: [],
   },

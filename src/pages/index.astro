@@ -1,31 +1,80 @@
 ---
+//Component Imports
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/ui/Button.astro";
+import { Image } from "astro:assets";
+
+//Asset Imports
+import hero from "../assets/home-header.png";
+import decor from "../assets/home-decorations.png";
 ---
-<script src="../utils/homeAnimations.js" ></script>
+
+<script src="../utils/homeAnimations.js"></script>
 
 <Layout title="La Pasteleria de La Postreria 77">
-  <header class="bg-dark text-light min-h-screen pl-16 flex items-center">
-    <div class="flex flex-col gap-2 items-start">
-      <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6">Pasteles, Panqués, Postres y Artículos de fiesta</span>
+  <header class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip ">
+    <div class="flex flex-col gap-2 items-start flex-shrink-0">
+      <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6"
+        >Pasteles, Panqués, Postres y Artículos de fiesta</span
+      >
       <h1 class="uppercase font-bold text-4xl">
         Pastelerías de <span class="text-brand">calidad</span>.
       </h1>
-      <p class="max-w-prose text-balance leading-loose font-light mb-8">
-        Encuentra toda la variedad de pasteles de los restaurantes de <span class="font-medium">La
-        Postreria 77</span>, productos exclusivos de La Pastelería, y artículos para
-        decorar tus pasteles.
+      <p class="max-w-[50ch] text-balance leading-loose font-light mb-8">
+        Encuentra toda la variedad de pasteles de los restaurantes de <span
+          class="font-medium">La Postreria 77</span
+        >, productos exclusivos de La Pastelería, y artículos para decorar tus
+        pasteles.
       </p>
-      <Button icon="arrow">Ver Menú</Button>
+      <Button arrow href="/menu">Ver Menú</Button>
+    </div>
+    <div class="">
+    <Image
+      src={hero}
+      alt="Nuestro pastel Almond Toffee en tamaño Anytime."
+      class="w-full scale-125 origin-top-left"
+    />
     </div>
   </header>
   <section class="py-24">
     <div class="flex flex-col gap-2 text-center items-center">
       <h2 class="text-4xl font-bold uppercase">Somos una promesa de calidad</h2>
-      <p class="leading-loose max-w-prose">Todos nuestro productos son elaborados diariamente, con procesos artesanales y productos de las mejores marcas del mercado que aseguran brindarte una experiencia incomparable.</p>
+      <p class="leading-loose max-w-prose">
+        Todos nuestro productos son elaborados diariamente, con procesos
+        artesanales y productos de las mejores marcas del mercado que aseguran
+        brindarte una experiencia incomparable.
+      </p>
     </div>
   </section>
-  <section class="min-h-screen bg-light p-page"></section>
+  <section class="bg-light p-40">
+    <div class="flex gap-16 items-center justify-center">
+      <div class="relative flex-shrink-0 z-10">
+        <span
+          class="absolute -inset-[8px] border-[0.5px] border-dark"
+          aria-hidden="true"></span>
+        <span
+          class="absolute -inset-[12px] border-[1px] border-dark"
+          aria-hidden="true"></span>
+        <Image
+          src={decor}
+          alt="Dos pasteles de pistache decorados con nuestros artículos de arcoíris."
+          class="w-full max-w-xl aspect-[16/10] object-cover"
+        />
+      </div>
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex gap-4 items-center">
+          <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
+          <h3 class="font-bold text-3xl uppercase">Ideas de Decoración</h3>
+        </div>
+        <p class="leading-loose mb-4">
+          Todos nuestro productos son elaborados diariamente, con procesos
+          artesanales y productos de las mejores marcas del mercado que aseguran
+          brindarte una experiencia incomparable.
+        </p>
+        <Button intent="secondary" arrow href="https://www.instagram.com/lapasteleriadelapostreria77/" newTab>Ver Ideas</Button>
+      </div>
+    </div>
+  </section>
   <section class="h-96"></section>
   <section class="min-h-screen bg-light"></section>
 </Layout>
