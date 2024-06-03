@@ -10,7 +10,8 @@ export default {
         "dark": "#1F1F1F",
         "light": "#F8FCFA",
         "brand": "#A2D8C8",
-        "brand-2": "#1F473B"
+        "brand-2": "#1F473B",
+        "brand-3": "#49AB8E"
       },
       spacing: {
         "page": "var(--page-spacing)",
