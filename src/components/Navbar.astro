@@ -1,8 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-
-import { Image } from "astro:assets";
-import logo from "../assets/logo-h.svg";
+import Navlink from "./ui/Navlink.astro";
 
 const links = [
   {
@@ -24,23 +22,17 @@ const links = [
 ];
 ---
 
-<nav class="py-12 px-16">
+<nav class="pb-6 pt-8 px-16">
   <div class="flex items-center justify-between">
     <a href="/">
-    <Icon name="logo" class="h-20 w-48 text-dark" />
+    <Icon name="logo" class="h-14 w-36 text-dark" />
     </a>
     <menu class="flex gap-8 items-center">
       {
-        links.map((link) => (
-          <li>
-            <a href={link.url}>{link.label}</a>
-          </li>
-        ))
+        links.map((link) => <Navlink href={link.url} text={link.label} />)
       }
       <div class="h-6 w-[2px] bg-dark"></div>
-      <li>
-        <a href="https://lapostreria77.com">La Postreria 77</a>
-      </li>
+      <Navlink href="https://lapostreria77.com" text="La Postreria 77" />
     </menu>
   </div>
 </nav>

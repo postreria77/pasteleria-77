@@ -12,13 +12,15 @@ const link = cva(
     "transition-all",
     "duration-300",
     "ease-out",
-    "group"
+    "text-dark",
+    "group",
+    "hover:translate-y-[-2px]",
   ],
   {
     variants: {
       intent: {
-        primary: ["font-light", "text-light"],
-        secondary: ["text-dark", "opacity-60", "hover:opacity-100", "hover:translate-y-[-2px]"],
+        primary: [],
+        secondary: ["opacity-60", "hover:opacity-100"],
       },
     },
   },
@@ -37,5 +39,12 @@ const { intent = "primary", icon, href, text } = Astro.props;
   <a href={href}>
     {text}
   </a>
-  {icon && <Icon name={icon} class="size-4 group-hover:translate-x-1 transition duration-500 ease-out" />}
+  {
+    icon && (
+      <Icon
+        name={icon}
+        class="size-4 group-hover:translate-x-1 transition duration-500 ease-out"
+      />
+    )
+  }
 </li>
