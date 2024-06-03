@@ -27,7 +27,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       gsap:
-        specifier: ^3.12.4
+        specifier: ^3.12.5
         version: 3.12.5
       solid-js:
         specifier: ^1.8.10
