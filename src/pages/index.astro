@@ -6,20 +6,25 @@ import Button from "../components/ui/Button.astro";
 <Layout title="La Pasteleria de La Postreria 77">
   <header class="bg-dark text-light min-h-screen pl-16 flex items-center">
     <div class="flex flex-col gap-2 items-start">
+      <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6">Pasteles, Panqués, Postres y Artículos de fiesta</span>
       <h1 class="uppercase font-bold text-4xl">
         Pastelerías de <span class="text-brand">calidad</span>.
       </h1>
-      <p class="max-w-prose text-balance leading-loose">
-        Encuentra toda la variedad de pasteles de los restaurantes de La
-        Postreria 77, productos exclusivos de La Pastelería, y artículos para
+      <p class="max-w-prose text-balance leading-loose font-light mb-8">
+        Encuentra toda la variedad de pasteles de los restaurantes de <span class="font-medium">La
+        Postreria 77</span>, productos exclusivos de La Pastelería, y artículos para
         decorar tus pasteles.
       </p>
       <Button icon="arrow">Ver Menú</Button>
     </div>
   </header>
-  <section class="h-80"></section>
-  <section class="min-h-screen bg-light p-page">
+  <section class="py-24">
+    <div class="flex flex-col gap-2 text-center items-center">
+      <h2 class="text-4xl font-bold uppercase">Somos una promesa de calidad</h2>
+      <p class="leading-loose max-w-prose">Todos nuestro productos son elaborados diariamente, con procesos artesanales y productos de las mejores marcas del mercado que aseguran brindarte una experiencia incomparable.</p>
+    </div>
   </section>
+  <section class="min-h-screen bg-light p-page"></section>
   <section class="h-96"></section>
   <section class="min-h-screen bg-light"></section>
 </Layout>
