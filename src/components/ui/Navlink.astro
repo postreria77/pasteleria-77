@@ -1,0 +1,41 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+import { Icon } from "astro-icon/components";
+
+const link = cva(
+  [
+    "leading-relaxed",
+    "flex",
+    "gap-1",
+    "items-center",
+    "transition-all",
+    "duration-300",
+    "ease-out",
+    "group"
+  ],
+  {
+    variants: {
+      intent: {
+        primary: ["font-light", "text-light"],
+        secondary: ["text-dark", "opacity-60", "hover:opacity-100", "hover:translate-y-[-2px]"],
+      },
+    },
+  },
+);
+
+export interface Props extends HTMLAttributes<"li">, VariantProps<typeof link> {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+const { intent = "primary", icon, href, text } = Astro.props;
+---
+
+<li class={link({ intent })}>
+  <a href={href}>
+    {text}
+  </a>
+  {icon && <Icon name={icon} class="size-4 group-hover:translate-x-1 transition duration-500 ease-out" />}
+</li>

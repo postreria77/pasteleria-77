@@ -5,7 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import Navbar from '../components/Navbar.astro';
-//import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -22,7 +22,8 @@ import Navbar from '../components/Navbar.astro';
   <body class="font-body bg-brand px-4">
     <Navbar />
     <slot />
-    <div class="fixed bottom-0 left-0 right-0 w-full h-4 bg-brand" />
+    <div class="fixed bottom-0 left-0 right-0 w-full h-4 bg-brand z-40" />
+    <Footer />
   </body>
 </html>
 <style is:global>
