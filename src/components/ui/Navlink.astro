@@ -14,6 +14,7 @@ const link = cva(
     "ease-out",
     "group",
     "hover:translate-y-[-2px]",
+    "relative"
   ],
   {
     variants: {
@@ -35,6 +36,7 @@ const { intent = "primary", icon, href, text } = Astro.props;
 ---
 
 <li class={link({ intent })}>
+  {!icon && <span class="absolute -left-4 top-1/2 size-1 bg-dark -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition duration-500 ease-out" aria-hidden="true"></span>}
   <a href={href}>
     {text}
   </a>

@@ -15,12 +15,14 @@ const button = cva(
     "flex",
     "items-center",
     "gap-[6px]",
+    "hover:gap-2",
     "hover:translate-y-[-2px]",
     "hover:shadow-md",
     "transition-all",
     "duration-300",
     "ease-out",
     "uppercase",
+    "group",
   ],
   {
     variants: {
@@ -53,5 +55,5 @@ const target = newTab ? "_blank" : "_self";
 
 <a href={href} target={target} class={button({ intent })}>
   <slot />
-  {arrow && <Icon name="arrow" class="size-5" />}
+  {arrow && <Icon name="arrow" class="size-5 group-hover:scale-105 transition duration-500 ease-out origin-left" />}
 </a>
