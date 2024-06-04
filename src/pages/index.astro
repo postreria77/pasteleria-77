@@ -12,9 +12,12 @@ import decor from "../assets/home-decorations.png";
 
 <script src="../utils/homeAnimations.js"></script>
 
-<Layout title="La Pasteleria de La Postreria 77" description="Encuentra toda la variedad de pasteles de los restaurantes de La Postreria 77, productos exclusivos de La Pastelería, y artículos para decorar tus pasteles.">
+<Layout
+  title="La Pasteleria de La Postreria 77"
+  description="Encuentra toda la variedad de pasteles de los restaurantes de La Postreria 77, productos exclusivos de La Pastelería, y artículos para decorar tus pasteles."
+>
   <header
-    class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip"
+    class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip mx-4"
   >
     <div class="flex flex-col gap-2 items-start flex-shrink-0">
       <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6"
@@ -49,7 +52,7 @@ import decor from "../assets/home-decorations.png";
       </p>
     </div>
   </section>
-  <section class="bg-light p-40">
+  <section class="bg-light p-40 mx-4">
     <div class="flex gap-16 items-center justify-center">
       <div class="relative flex-shrink-0 z-10">
         <span
@@ -67,7 +70,9 @@ import decor from "../assets/home-decorations.png";
       <div class="flex flex-col items-start gap-4">
         <div class="flex gap-4 items-center">
           <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-          <h3 class="font-bold text-3xl uppercase">Ideas de <span class="text-brand-3">Decoración</span></h3>
+          <h3 class="font-bold text-3xl uppercase">
+            Ideas de <span class="text-brand-3">Decoración</span>
+          </h3>
         </div>
         <p class="leading-loose mb-4">
           Todos nuestro productos son elaborados diariamente, con procesos
@@ -85,7 +90,7 @@ import decor from "../assets/home-decorations.png";
       </div>
     </div>
   </section>
-  <section class="py-16 flex gap-4 group">
+  <section class="py-16 flex gap-4 group overflow-clip">
     <ul
       class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
     >
@@ -112,11 +117,39 @@ import decor from "../assets/home-decorations.png";
       <MarqueeCard />
     </ul>
   </section>
-  <section class="p-40 bg-light">
-    <div class="flex gap-16 items-center ">
+  <section class="p-40 bg-light mx-4">
+    <div class="flex flex-col gap-20">
       <div class="flex gap-4 items-center">
         <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-        <h3 class="font-bold text-3xl uppercase">Nuestras <span class="text-brand-3">Sucursales</span></h3>
+        <h3 class="font-bold text-3xl uppercase">
+          Nuestras <span class="text-brand-3">Sucursales</span>
+        </h3>
+      </div>
+      <div class="flex flex-col gap-8">
+        <h4 class="uppercase tracking-widest">Monterrey Solo por Rappi en:</h4>
+        <ul class="flex gap-12">
+          <li
+            class="font-medium text-xl relative before:absolute before:size-1 before:bg-dark before:-left-3 before:top-1/2 before:-translate-y-1/2"
+          >
+            Pueblo Serena
+          </li>
+          <li
+            class="font-medium text-xl relative before:absolute before:size-1 before:bg-dark before:-left-3 before:top-1/2 before:-translate-y-1/2"
+          >
+            San Nicolás
+          </li>
+          <li
+            class="font-medium text-xl relative before:absolute before:size-1 before:bg-dark before:-left-3 before:top-1/2 before:-translate-y-1/2"
+          >
+            Encino
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="uppercase tracking-widest">Sucursales Físicas:</h4>
+        <div>
+
+        </div>
       </div>
     </div>
   </section>
