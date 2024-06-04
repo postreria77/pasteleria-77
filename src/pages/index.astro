@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/ui/Button.astro";
 import { Image } from "astro:assets";
+import MarqueeCard from "../components/MarqueeCard.astro";
 
 //Asset Imports
 import hero from "../assets/home-header.png";
@@ -12,7 +13,9 @@ import decor from "../assets/home-decorations.png";
 <script src="../utils/homeAnimations.js"></script>
 
 <Layout title="La Pasteleria de La Postreria 77">
-  <header class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip ">
+  <header
+    class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip"
+  >
     <div class="flex flex-col gap-2 items-start flex-shrink-0">
       <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6"
         >Pasteles, Panqués, Postres y Artículos de fiesta</span
@@ -29,11 +32,11 @@ import decor from "../assets/home-decorations.png";
       <Button arrow href="/menu">Ver Menú</Button>
     </div>
     <div class="">
-    <Image
-      src={hero}
-      alt="Nuestro pastel Almond Toffee en tamaño Anytime."
-      class="w-full scale-125 origin-top-left"
-    />
+      <Image
+        src={hero}
+        alt="Nuestro pastel Almond Toffee en tamaño Anytime."
+        class="w-full scale-125 origin-top-left"
+      />
     </div>
   </header>
   <section class="py-24">
@@ -64,38 +67,57 @@ import decor from "../assets/home-decorations.png";
       <div class="flex flex-col items-start gap-4">
         <div class="flex gap-4 items-center">
           <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-          <h3 class="font-bold text-3xl uppercase">Ideas de Decoración</h3>
+          <h3 class="font-bold text-3xl uppercase">Ideas de <span class="text-brand-3">Decoración</span></h3>
         </div>
         <p class="leading-loose mb-4">
           Todos nuestro productos son elaborados diariamente, con procesos
           artesanales y productos de las mejores marcas del mercado que aseguran
           brindarte una experiencia incomparable.
         </p>
-        <Button intent="secondary" arrow href="https://www.instagram.com/lapasteleriadelapostreria77/" newTab>Ver Ideas</Button>
+        <Button
+          intent="secondary"
+          arrow
+          href="https://www.instagram.com/lapasteleriadelapostreria77/"
+          newTab
+        >
+          Ver Ideas
+        </Button>
       </div>
     </div>
   </section>
   <section class="py-16 flex gap-4 group">
-    <ul class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]">
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
+    <ul
+      class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+    >
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
     </ul>
-    <ul class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
-      <li class="size-80 bg-brand-2 flex-shrink-0"></li>
+    <ul
+      class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+      aria-hidden="true"
+    >
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
+      <MarqueeCard />
     </ul>
   </section>
-  <section class="min-h-screen bg-light"></section>
+  <section class="p-40 bg-light">
+    <div class="flex gap-16 items-center ">
+      <div class="flex gap-4 items-center">
+        <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
+        <h3 class="font-bold text-3xl uppercase">Nuestras <span class="text-brand-3">Sucursales</span></h3>
+      </div>
+    </div>
+  </section>
 </Layout>
