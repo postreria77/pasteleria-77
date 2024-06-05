@@ -1,0 +1,30 @@
+---
+import Location from "../components/Location.astro";
+
+//Asset imports
+import parqueCentro from "../assets/locations/parque-centro.png"
+---
+
+<div class="flex flex-col gap-16">
+  <menu class="flex gap-8 items-center">
+    <li>
+      <button
+        class="px-6 py-4 bg-opacity-0 bg-brand border border-dark leading-none text-xl hover:bg-opacity-35 transition duration-300 ease-out hover:translate-y-[-2px]"
+        >Parque Centro (Saltillo)</button
+      >
+    </li>
+    <li>
+      <button
+        class="px-6 py-4 bg-opacity-0 bg-brand border border-dark leading-none text-xl hover:bg-opacity-35 transition duration-300 ease-out hover:translate-y-[-2px]"
+        >Monterrey (Herradura)</button
+      >
+    </li>
+  </menu>
+  <Location
+    image={parqueCentro}
+    address="Edificio MAIA, Blvd. Parque Centro #1425 local CM-A Parque Centro, 25240. Saltillo, Coahuila."
+    phone="81 2474 8801"
+    hours={`Lunes a Sabado /  9:00 - 20:00 hrs.
+    Domingo  /  10:00 - 19:00 hrs.`}
+  />
+</div>

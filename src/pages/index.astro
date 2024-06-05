@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/ui/Button.astro";
 import { Image } from "astro:assets";
 import MarqueeCard from "../components/MarqueeCard.astro";
+import LocationTabs from "../components/LocationTabs.astro";
 
 //Asset Imports
 import hero from "../assets/home-header.png";
@@ -101,23 +102,23 @@ import magnolias from "../assets/covers/magnolias.png";
     <ul
       class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
     >
-      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional"/>
-      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime"/>
-      <MarqueeCard image={panques} name="Panqués"/>
-      <MarqueeCard image={miniBrownies} name="Mini Brownies"/>
-      <MarqueeCard image={conchas} name="Conchas"/>
-      <MarqueeCard image={magnolias} name="Magnolias"/>
+      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional" />
+      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime" />
+      <MarqueeCard image={panques} name="Panqués" />
+      <MarqueeCard image={miniBrownies} name="Mini Brownies" />
+      <MarqueeCard image={conchas} name="Conchas" />
+      <MarqueeCard image={magnolias} name="Magnolias" />
     </ul>
     <ul
       class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
       aria-hidden="true"
     >
-      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional"/>
-      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime"/>
-      <MarqueeCard image={panques} name="Panqués"/>
-      <MarqueeCard image={miniBrownies} name="Mini Brownies"/>
-      <MarqueeCard image={conchas} name="Conchas"/>
-      <MarqueeCard image={magnolias} name="Magnolias"/>
+      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional" />
+      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime" />
+      <MarqueeCard image={panques} name="Panqués" />
+      <MarqueeCard image={miniBrownies} name="Mini Brownies" />
+      <MarqueeCard image={conchas} name="Conchas" />
+      <MarqueeCard image={magnolias} name="Magnolias" />
     </ul>
   </section>
   <section id="ubicaciones" class="p-40 bg-light mx-4 scroll-mt-24">
@@ -148,11 +149,9 @@ import magnolias from "../assets/covers/magnolias.png";
           </li>
         </ul>
       </div>
-      <div>
+      <div class="flex flex-col gap-8">
         <h4 class="uppercase tracking-widest">Sucursales Físicas:</h4>
-        <div>
-
-        </div>
+        <LocationTabs />
       </div>
     </div>
   </section>
