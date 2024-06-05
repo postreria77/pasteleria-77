@@ -8,6 +8,13 @@ import MarqueeCard from "../components/MarqueeCard.astro";
 //Asset Imports
 import hero from "../assets/home-header.png";
 import decor from "../assets/home-decorations.png";
+//Marquee Images
+import pastelTradicional from "../assets/covers/pastel-tradicional.png";
+import pastelAnytime from "../assets/covers/pastel-anytime.png";
+import panques from "../assets/covers/panque.png";
+import miniBrownies from "../assets/covers/mini-brownies.png";
+import conchas from "../assets/covers/conchas.png";
+import magnolias from "../assets/covers/magnolias.png";
 ---
 
 <script src="../utils/homeAnimations.js"></script>
@@ -94,30 +101,26 @@ import decor from "../assets/home-decorations.png";
     <ul
       class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
     >
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
+      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional"/>
+      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime"/>
+      <MarqueeCard image={panques} name="Panqués"/>
+      <MarqueeCard image={miniBrownies} name="Mini Brownies"/>
+      <MarqueeCard image={conchas} name="Conchas"/>
+      <MarqueeCard image={magnolias} name="Magnolias"/>
     </ul>
     <ul
       class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
       aria-hidden="true"
     >
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
-      <MarqueeCard />
+      <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional"/>
+      <MarqueeCard image={pastelAnytime} name="Pasteles Anytime"/>
+      <MarqueeCard image={panques} name="Panqués"/>
+      <MarqueeCard image={miniBrownies} name="Mini Brownies"/>
+      <MarqueeCard image={conchas} name="Conchas"/>
+      <MarqueeCard image={magnolias} name="Magnolias"/>
     </ul>
   </section>
-  <section class="p-40 bg-light mx-4">
+  <section id="ubicaciones" class="p-40 bg-light mx-4 scroll-mt-24">
     <div class="flex flex-col gap-20">
       <div class="flex gap-4 items-center">
         <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>

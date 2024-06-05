@@ -9,10 +9,11 @@ Utilizamos Astro JS como meta framework para manejar el routing y la administrac
 ### To Dos
 - [X] Header de página principal
 - [X] Seccion de ideas de decoración
-- [] Sección de productos como Marquee
+- [X] Sección de productos como Marquee
 - [X] Footer y Navbar
 - [] Menú de productos
+- [] Añadir banner de café en menú
 - [] Añadir Astro DB para manejar los productos
 - [] Animaciones
-- [] Añadir Astro SEO para manejar metadata
+- [X] Añadir Astro SEO para manejar metadata
 - [] Lanzar página

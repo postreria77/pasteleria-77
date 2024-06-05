@@ -1,8 +1,18 @@
 ---
+import { Image } from "astro:assets";
+import { type ImageMetadata } from "astro";
 
+interface Props {
+  image: ImageMetadata;
+  name: string;
+}
+
+const { image, name } = Astro.props;
 ---
 
-<li class="flex-shrink-0 flex flex-col items-center gap-8">
-  <div class="h-80 w-72 bg-brand-2"></div>
-  <h4 class="font-medium uppercase">Nombre del producto</h4>
+<li>
+  <a href="/menu" class="flex-shrink-0 flex flex-col items-center gap-8 w-72">
+  <Image src={image} alt={name} class="aspect-[7/8]"/>
+  <h4 class="font-medium uppercase">{name}</h4>
+  </a>
 </li>
