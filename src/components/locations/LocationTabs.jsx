@@ -1,4 +1,4 @@
-import { locations, type Location } from "../../utils/locations";
+import { locations} from "../../utils/locations";
 import Locations from "./Locations";
 import { useState } from "react";
 
@@ -6,8 +6,8 @@ function LocationTabs() {
 
   const [activeLocation, setActiveLocation] = useState(locations[1]);
 
-  const handleTabs = (e: any) => {
-    setActiveLocation(locations.find((location: Location) => location.name === e.target.value));
+  const handleTabs = (e) => {
+    setActiveLocation(locations.find((location) => location.name === e.target.value));
   }
 
   return (

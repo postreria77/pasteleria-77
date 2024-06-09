@@ -1,8 +1,5 @@
-import type { Location } from '../../utils/locations';
-
-
-function Locations({ location }: { location: Location }) {
-  const { name, address, phone, hours, image, map } = location
+function Locations({ location }) {
+  const { address, phone, hours, image, map } = location
   return (
     <div className="grid grid-cols-2 gap-8 location">
       <div className="flex flex-col gap-8">
