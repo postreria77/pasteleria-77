@@ -1,9 +1,18 @@
 ---
-import { db, Pasteles } from "astro:db";
+import { db, Pasteles, Productos, eq } from "astro:db";
 const pasteles = await db.select().from(Pasteles);
+const panques = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 1));
+const postres = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 2));
 
 import Layout from "../layouts/Layout.astro";
-import MenuCard from "../components/menuCard.astro";
+import PastelesCard from "../components/PastelesCard.astro";
+import ProductCard from "../components/ProductCard.astro";
 ---
 
 <Layout
@@ -19,8 +28,32 @@ import MenuCard from "../components/menuCard.astro";
     </header>
     <ul class="grid grid-cols-4 gap-8">
       {
-        pasteles.map(({ name, description }) => (
-          <MenuCard name={name} description={description} />
+        pasteles.map(
+          ({ name, description, tradicional, anytime, rebanadaAnytime }) => (
+            <PastelesCard
+              name={name}
+              description={description}
+              tradicional={tradicional}
+              anytime={anytime}
+              rebanadaAnytime={rebanadaAnytime}
+            />
+          ),
+        )
+      }
+    </ul>
+    <h2 class="font-bold text-2xl uppercase">Panqués</h2>
+    <ul class="grid grid-cols-4 gap-8">
+      {
+        panques.map(({ name, price, description }) => (
+          <ProductCard name={name} price={price} description={description} />
+        ))
+      }
+    </ul>
+    <h2 class="font-bold text-2xl uppercase">Postres</h2>
+    <ul class="grid grid-cols-4 gap-8">
+      {
+        postres.map(({ name, price, description }) => (
+          <ProductCard name={name} price={price} description={description} />
         ))
       }
     </ul>

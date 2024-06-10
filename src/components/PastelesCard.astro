@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  name: string;
+  description: string;
+  tradicional: boolean;
+  anytime: boolean;
+  rebanadaAnytime: boolean;
+}
+
+const { name, description, tradicional, anytime, rebanadaAnytime } =
+  Astro.props;
+---
+
+<li class="flex flex-col gap-4">
+  <div class="aspect-square bg-brand-2"></div>
+  <div>
+    <div class="flex flex-col gap-2 mb-4 opacity-60">
+      <div class="flex items-bottom gap-1">
+        <Icon name="cake" class="size-4 mr-2" />
+        { tradicional && <span class="text-sm">Tradicional</span> }
+        { tradicional && anytime && <span class="text-sm">y</span>}
+        { anytime && <span class="text-sm">Anytime</span> }
+      </div>
+      { rebanadaAnytime &&
+      <div class="flex items-bottom gap-1">
+        <Icon name="slice" class="size-4 mr-2" />
+        <span class="text-sm">Rebanada Anytime</span>
+      </div>
+      }
+    </div>
+    <h3 class="text-xl font-medium">{name}</h3>
+    <p class="text-sm opacity-60">{description}</p>
+  </div>
+</li>
