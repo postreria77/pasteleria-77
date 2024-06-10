@@ -26,7 +26,7 @@ import ProductCard from "../components/ProductCard.astro";
       <h1 class="text-5xl font-bold uppercase text-right">Menú</h1>
       <h2 class="font-bold text-2xl uppercase">Pasteles</h2>
     </header>
-    <ul class="grid grid-cols-4 gap-8">
+    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
       {
         pasteles.map(
           ({ name, description, tradicional, anytime, rebanadaAnytime }) => (
@@ -51,6 +51,34 @@ import ProductCard from "../components/ProductCard.astro";
     </ul>
     <h2 class="font-bold text-2xl uppercase">Postres</h2>
     <ul class="grid grid-cols-4 gap-8">
+      <div>
+        <ProductCard
+          name="Conchas"
+          price={65}
+          description="Pan dulce de la casa, amasadas con nata 100% de granja y mantequilla Gloria Gourmet."
+        />
+        <div class="flex flex-col mt-4">
+          <h5 class="font-medium text-sm">Sabores disponibles:</h5>
+          <p class="text-xs opacity-60">
+            Vanilla, Chocolate Abuelita, Mazapán, Churro, Nuez.
+          </p>
+        </div>
+        <div class="flex flex-col mt-4">
+          <h5 class="font-medium text-sm">Rellenos Disponibles:</h5>
+          <div class="flex justify-between items-center">
+          <p class="opacity-60 text-sm">
+          Nutella
+          </p>
+          <span class="text-sm">$20</span>
+          </div>
+          <div class="flex justify-between items-center">
+          <p class="opacity-60 text-sm">
+          Pistela
+          </p>
+          <span class="text-sm">$30</span>
+          </div>
+        </div>
+      </div>
       {
         postres.map(({ name, price, description }) => (
           <ProductCard name={name} price={price} description={description} />
