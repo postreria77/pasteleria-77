@@ -5,7 +5,7 @@ export default async function() {
     {
       name: "Ferrero",
       description: "Pan de chocolate relleno de Nutella, betún de chocolate y ganache. Decorado con Ferrero Rocher.",
-      image: "https://pasteleria-77.vercel.app/webclip.png",
+      image: "/images/menu/ferrero.webp",
       tradicional: true,
       anytime: true,
       rebanadaAnytime: true,
@@ -13,7 +13,7 @@ export default async function() {
     {
       name: "Lord Mostachón",
       description: "Capas de pan de chocolate y mostachón de nuez, relleno de dulce de leche, almendras y arándanos. Cubierto con un betún cremoso de caramelo.",
-      image: "https://pasteleria-77.vercel.app/webclip.png",
+      image: "/images/menu/lord-mostachon.webp",
       tradicional: false,
       anytime: true,
       rebanadaAnytime: false,
@@ -21,7 +21,7 @@ export default async function() {
     {
       name: "Pecan Pie Cake",
       description: "Pan de vainilla con relleno de pie de nuez, betún de vainilla, capa de dulce de leche y nuez caramelizada.",
-      image: "https://pasteleria-77.vercel.app/webclip.png",
+      image: "/images/menu/pecan-pie.webp",
       tradicional: true,
       anytime: true,
       rebanadaAnytime: false,

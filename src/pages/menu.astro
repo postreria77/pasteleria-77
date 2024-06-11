@@ -64,10 +64,11 @@ import rebanada from "../assets/menu/rebanada.png";
       >
         {
           pasteles.map(
-            ({ name, description, tradicional, anytime, rebanadaAnytime }) => (
+            ({ name, description, image, tradicional, anytime, rebanadaAnytime }) => (
               <PastelesCard
                 name={name}
                 description={description}
+                image={image}
                 tradicional={tradicional}
                 anytime={anytime}
                 rebanadaAnytime={rebanadaAnytime}
