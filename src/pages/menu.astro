@@ -1,4 +1,5 @@
 ---
+//Database imports
 import { db, Pasteles, Productos, eq } from "astro:db";
 const pasteles = await db.select().from(Pasteles);
 const productos = await db.select().from(Productos);
@@ -6,9 +7,16 @@ const productos = await db.select().from(Productos);
 const panques = productos.filter((producto) => producto.categoryId === 1);
 const postres = productos.filter((producto) => producto.categoryId === 2);
 
+//Component imports
 import Layout from "../layouts/Layout.astro";
 import PastelesCard from "../components/PastelesCard.astro";
 import ProductCard from "../components/ProductCard.astro";
+import CakeFlavs from "../components/CakeFlavs.astro";
+
+//Image imports
+import tradicional from "../assets/menu/tradicional.png";
+import anytime from "../assets/menu/anytime.png";
+import rebanada from "../assets/menu/rebanada.png";
 ---
 
 <Layout
@@ -25,6 +33,32 @@ import ProductCard from "../components/ProductCard.astro";
         </h1>
         <h2 class="font-bold text-xl sm:text-2xl uppercase">Pasteles</h2>
       </div>
+      <ul class="flex flex-col sm:flex-row gap-page">
+        <CakeFlavs
+          image={tradicional}
+          alt="Pastel Tamaño Tradicional."
+          title="Tradicional"
+          price={1199}
+          flavors="*Charol, Ferrero, Red Velvet, Zanahoria, Pecan Pie Cake, Carlotta, Cheesecake Brownie, Cheesecake Tortuga."
+          icon="cake"
+        />
+        <CakeFlavs
+          image={anytime}
+          alt="Pastel Tamaño Tradicional."
+          title="Anytime"
+          price={550}
+          flavors="*Pistache, Matilda, Red Velvet, Carlotta, Charol, Ferrero, Zanahoria, Pecan Pie Cake, Almond Toffee, Lord Mostachón, Lady Berry, Cheesecake Plátano, Cheesecake Tortuga, Cheesecake Brownie. "
+          icon="cake"
+        />
+        <CakeFlavs
+          image={rebanada}
+          alt="Pastel Tamaño Tradicional."
+          title="Rebanada Anytime"
+          price={135}
+          flavors="*Charol, Matilda, Red Velvet, Ferrero, Zanahoria."
+          icon="slice"
+        />
+      </ul>
       <ul
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
       >
@@ -43,7 +77,9 @@ import ProductCard from "../components/ProductCard.astro";
         }
       </ul>
     </header>
-    <section class="xs:py-12 sm:py-16 lg:py-20 flex flex-col gap-8 sm:gap-12 lg:gap-16">
+    <section
+      class="xs:py-12 sm:py-16 lg:py-20 flex flex-col gap-8 sm:gap-12 lg:gap-16"
+    >
       <h2 class="font-bold text-xl sm:text-2xl uppercase">Panqués</h2>
       <ul
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
