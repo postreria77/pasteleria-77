@@ -16,7 +16,7 @@ const { image, alt, icon, title, price, flavors } = Astro.props;
 ---
 
 <li class="lg:min-w-80">
-  <Image src={image} alt={alt} class="size-48 lg:size-60" />
+  <Image src={image} alt={alt} class="w-48 lg:w-60" />
   <div class="flex items-end gap-8 mt-4 mb-2">
     <div class="flex items-end gap-3">
       <Icon name={icon} class="size-5 lg:size-6" />
@@ -24,5 +24,5 @@ const { image, alt, icon, title, price, flavors } = Astro.props;
     </div>
     <h4 class="font-medium text-xl leading-none">${price}</h4>
   </div>
-  <p class="text-xs lg:text-sm opacity-60">{flavors}</p>
+  <p class="text-[10px] lg:text-sm opacity-60 text-light">{flavors}</p>
 </li>
