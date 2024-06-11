@@ -1,14 +1,10 @@
 ---
 import { db, Pasteles, Productos, eq } from "astro:db";
 const pasteles = await db.select().from(Pasteles);
-const panques = await db
-  .select()
-  .from(Productos)
-  .where(eq(Productos.categoryId, 1));
-const postres = await db
-  .select()
-  .from(Productos)
-  .where(eq(Productos.categoryId, 2));
+const productos = await db.select().from(Productos);
+
+const panques = productos.filter((producto) => producto.categoryId === 1);
+const postres = productos.filter((producto) => producto.categoryId === 2);
 
 import Layout from "../layouts/Layout.astro";
 import PastelesCard from "../components/PastelesCard.astro";
@@ -19,71 +15,81 @@ import ProductCard from "../components/ProductCard.astro";
   title="Menú"
   description="Consulta nuestro menú y descubre tu nuevo postre favorito."
 >
-  <main
-    class="flex flex-col mx-4 min-h-screen bg-dark text-light p-page gap-12"
-  >
-    <header>
-      <h1 class="text-5xl font-bold uppercase text-right">Menú</h1>
-      <h2 class="font-bold text-2xl uppercase">Pasteles</h2>
-    </header>
-    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-      {
-        pasteles.map(
-          ({ name, description, tradicional, anytime, rebanadaAnytime }) => (
-            <PastelesCard
-              name={name}
-              description={description}
-              tradicional={tradicional}
-              anytime={anytime}
-              rebanadaAnytime={rebanadaAnytime}
-            />
-          ),
-        )
-      }
-    </ul>
-    <h2 class="font-bold text-2xl uppercase">Panqués</h2>
-    <ul class="grid grid-cols-4 gap-8">
-      {
-        panques.map(({ name, price, description }) => (
-          <ProductCard name={name} price={price} description={description} />
-        ))
-      }
-    </ul>
-    <h2 class="font-bold text-2xl uppercase">Postres</h2>
-    <ul class="grid grid-cols-4 gap-8">
-      <div>
-        <ProductCard
-          name="Conchas"
-          price={65}
-          description="Pan dulce de la casa, amasadas con nata 100% de granja y mantequilla Gloria Gourmet."
-        />
-        <div class="flex flex-col mt-4">
-          <h5 class="font-medium text-sm">Sabores disponibles:</h5>
-          <p class="text-xs opacity-60">
-            Vanilla, Chocolate Abuelita, Mazapán, Churro, Nuez.
-          </p>
-        </div>
-        <div class="flex flex-col mt-4">
-          <h5 class="font-medium text-sm">Rellenos Disponibles:</h5>
-          <div class="flex justify-between items-center">
-          <p class="opacity-60 text-sm">
-          Nutella
-          </p>
-          <span class="text-sm">$20</span>
-          </div>
-          <div class="flex justify-between items-center">
-          <p class="opacity-60 text-sm">
-          Pistela
-          </p>
-          <span class="text-sm">$30</span>
-          </div>
-        </div>
+  <main class="mx-4 bg-dark text-light p-page gap-12">
+    <header class="py-20 flex flex-col gap-8 sm:gap-12 lg:gap-16">
+      <div class="flex flex-col gap-4">
+        <h1
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-right"
+        >
+          Menú
+        </h1>
+        <h2 class="font-bold text-xl sm:text-2xl uppercase">Pasteles</h2>
       </div>
-      {
-        postres.map(({ name, price, description }) => (
-          <ProductCard name={name} price={price} description={description} />
-        ))
-      }
-    </ul>
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+      >
+        {
+          pasteles.map(
+            ({ name, description, tradicional, anytime, rebanadaAnytime }) => (
+              <PastelesCard
+                name={name}
+                description={description}
+                tradicional={tradicional}
+                anytime={anytime}
+                rebanadaAnytime={rebanadaAnytime}
+              />
+            ),
+          )
+        }
+      </ul>
+    </header>
+    <section class="xs:py-12 sm:py-16 lg:py-20 flex flex-col gap-8 sm:gap-12 lg:gap-16">
+      <h2 class="font-bold text-xl sm:text-2xl uppercase">Panqués</h2>
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+      >
+        {
+          panques.map(({ name, price, description }) => (
+            <ProductCard name={name} price={price} description={description} />
+          ))
+        }
+      </ul>
+    </section>
+    <section class="py-20 flex flex-col gap-8 sm:gap-12 lg:gap-16">
+      <h2 class="font-bold text-xl sm:text-2xl uppercase">Postres</h2>
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+      >
+        <div>
+          <ProductCard
+            name="Conchas"
+            price={65}
+            description="Pan dulce de la casa, amasadas con nata 100% de granja y mantequilla Gloria Gourmet."
+          />
+          <div class="flex flex-col mt-4">
+            <h5 class="font-medium text-sm">Sabores disponibles:</h5>
+            <p class="text-xs opacity-60">
+              Vanilla, Chocolate Abuelita, Mazapán, Churro, Nuez.
+            </p>
+          </div>
+          <div class="flex flex-col mt-4">
+            <h5 class="font-medium text-sm">Rellenos Disponibles:</h5>
+            <div class="flex justify-between items-center">
+              <p class="opacity-60 text-sm">Nutella</p>
+              <span class="text-sm">$20</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="opacity-60 text-sm">Pistela</p>
+              <span class="text-sm">$30</span>
+            </div>
+          </div>
+        </div>
+        {
+          postres.map(({ name, price, description }) => (
+            <ProductCard name={name} price={price} description={description} />
+          ))
+        }
+      </ul>
+    </section>
   </main>
 </Layout>

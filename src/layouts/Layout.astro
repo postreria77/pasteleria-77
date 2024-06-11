@@ -41,7 +41,16 @@ import Footer from "../components/Footer.astro";
     <style is:global>
       :root {
         /* Spacing Scales */
-        --page-spacing: 3rem;
+        --page-spacing: var(--mobile-spacing);
+        @media (min-width: 640px) {
+          --page-spacing: var(--tablet-spacing);
+        }
+        @media (min-width: 1024px) {
+          --page-spacing: var(--desktop-spacing);
+        }
+        --desktop-spacing: 3rem;
+        --tablet-spacing: 2rem;
+        --mobile-spacing: 1rem;
       }
     </style>
   </body>
