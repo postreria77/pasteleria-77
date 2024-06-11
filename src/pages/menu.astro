@@ -33,7 +33,7 @@ import rebanada from "../assets/menu/rebanada.png";
         </h1>
         <h2 class="font-bold text-xl sm:text-2xl uppercase">Pasteles</h2>
       </div>
-      <ul class="flex flex-col sm:flex-row gap-page">
+      <ul class="flex flex-col sm:flex-row sm:gap-page">
         <CakeFlavs
           image={tradicional}
           alt="Pastel Tamaño Tradicional."
@@ -98,27 +98,28 @@ import rebanada from "../assets/menu/rebanada.png";
         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
       >
         <div>
+      <h3 class="text-xs lg:text-xl font-medium">somn</h3>
           <ProductCard
-            image="/images/menu/ferrero.webp"
+            image="/images/menu/conchas.webp"
             name="Conchas"
             price={65}
             description="Pan dulce de la casa, amasadas con nata 100% de granja y mantequilla Gloria Gourmet."
           />
           <div class="flex flex-col mt-4">
-            <h5 class="font-medium text-sm">Sabores disponibles:</h5>
-            <p class="text-xs opacity-60">
+            <h5 class="text-[10px] lg:text-base font-medium">Sabores disponibles:</h5>
+            <p class="text-[10px] lg:text-sm opacity-60">
               Vanilla, Chocolate Abuelita, Mazapán, Churro, Nuez.
             </p>
           </div>
           <div class="flex flex-col mt-4">
-            <h5 class="font-medium text-sm">Rellenos Disponibles:</h5>
+            <h5 class="text-[10px] lg:text-base font-medium">Rellenos Disponibles:</h5>
             <div class="flex justify-between items-center">
-              <p class="opacity-60 text-sm">Nutella</p>
-              <span class="text-sm">$20</span>
+              <p class="text-[10px] lg:text-sm opacity-60">Nutella</p>
+              <span class="text-[10px] lg:text-sm">$20</span>
             </div>
             <div class="flex justify-between items-center">
-              <p class="opacity-60 text-sm">Pistela</p>
-              <span class="text-sm">$30</span>
+              <p class="text-[10px] lg:text-sm opacity-60">Pistela</p>
+              <span class="text-[10px] lg:text-sm">$30</span>
             </div>
           </div>
         </div>

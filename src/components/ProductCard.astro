@@ -21,9 +21,9 @@ const { image, name, price, description } = Astro.props;
   />
   <div>
     <div class="flex items-center justify-between gap-4">
-      <h3 class="text-base lg:text-xl font-medium">{name}</h3>
-      <h4 class="text-base lg:text-xl font-medium">{price}</h4>
+      <h3 class="text-xs lg:text-xl font-medium">{name}</h3>
+      <h4 class="text-xs lg:text-xl font-medium">${price}</h4>
     </div>
-    <p class="text-xs lg:text-sm opacity-60">{description}</p>
+    <p class="text-[10px] lg:text-sm opacity-60">{description}</p>
   </div>
 </li>
