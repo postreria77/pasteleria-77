@@ -40,16 +40,19 @@ const sucursalesRappi = [
   description="Encuentra toda la variedad de pasteles de los restaurantes de La Postreria 77, productos exclusivos de La Pastelería, y artículos para decorar tus pasteles."
 >
   <header
-    class="flex min-h-screen flex-col overflow-clip bg-hero object-cover object-right-bottom pl-16 text-light sm:flex-row sm:items-center lg:mx-4"
+    class="mx-2 flex min-h-screen flex-col gap-8 overflow-clip bg-gradient-to-b from-header-1 via-header-2 via-50% to-header-3 to-80% object-cover object-right-bottom px-page pt-48 text-light sm:flex-row sm:items-center sm:gap-0 sm:px-16 sm:pt-0 lg:mx-4"
   >
-    <div class="flex flex-shrink-0 flex-col items-start gap-2">
-      <span class="mb-6 text-xs font-light uppercase tracking-[0.15rem]"
+    <div class="flex flex-shrink-0 flex-col items-start gap-1 sm:gap-2">
+      <span
+        class="mb-4 text-[8px] font-light uppercase tracking-[0.1rem] sm:mb-6 sm:text-xs"
         >Pasteles, Panqués, Postres y Artículos de fiesta</span
       >
-      <h1 class="text-4xl font-bold uppercase">
+      <h1 class="text-3xl font-bold uppercase sm:text-4xl">
         Pastelerías de <span class="text-brand">calidad</span>.
       </h1>
-      <p class="mb-8 max-w-[50ch] text-balance font-light leading-loose">
+      <p
+        class="mb-8 max-w-[50ch] text-balance text-xs font-light leading-loose sm:text-base sm:leading-loose"
+      >
         Encuentra toda la variedad de pasteles de los restaurantes de <span
           class="font-medium">La Postreria 77</span
         >, productos exclusivos de La Pastelería, y artículos para decorar tus
@@ -61,13 +64,15 @@ const sucursalesRappi = [
       <Image
         src={hero}
         alt="Nuestro pastel Almond Toffee en tamaño Anytime."
-        class="w-full min-w-[40rem] origin-top-left scale-125"
+        class="w-full min-w-[40rem] origin-top-left scale-90 sm:scale-125"
       />
     </div>
   </header>
   <section class="py-24">
     <div class="flex flex-col items-center gap-2 px-page text-center">
-      <h2 class="text-4xl font-bold uppercase">Somos una promesa de calidad</h2>
+      <h2 class="text-balance text-2xl font-bold uppercase sm:text-4xl">
+        Somos una promesa de calidad
+      </h2>
       <p class="max-w-prose leading-loose">
         Todos nuestro productos son elaborados diariamente, con procesos
         artesanales y productos de las mejores marcas del mercado que aseguran
@@ -75,14 +80,14 @@ const sucursalesRappi = [
       </p>
     </div>
   </section>
-  <section class="mx-2 bg-light p-40 sm:mx-4">
-    <div class="hidden items-center justify-center gap-16 sm:flex">
+  <section class="mx-2 bg-light px-page py-20 sm:mx-4 sm:p-40">
+    <div class="flex flex-col items-center justify-center gap-16 sm:flex-row">
       <div class="relative z-10 flex-shrink-0">
         <span
-          class="absolute -inset-[8px] border-[0.5px] border-dark"
+          class="absolute -inset-[4px] border-[0.5px] border-dark sm:-inset-[8px]"
           aria-hidden="true"></span>
         <span
-          class="absolute -inset-[12px] border-[1px] border-dark"
+          class="absolute -inset-[6px] border-[1px] border-dark sm:-inset-[12px]"
           aria-hidden="true"></span>
         <Image
           src={decor}
@@ -92,8 +97,9 @@ const sucursalesRappi = [
       </div>
       <div class="flex flex-col items-start gap-4">
         <div class="flex items-center gap-4">
-          <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-          <h3 class="text-3xl font-bold uppercase">
+          <span class="hidden h-[2px] w-12 bg-dark sm:block" aria-hidden="true"
+          ></span>
+          <h3 class="text-2xl font-bold uppercase sm:text-3xl">
             Ideas de <span class="text-brand-3">Decoración</span>
           </h3>
         </div>
@@ -142,28 +148,40 @@ const sucursalesRappi = [
       <MarqueeCard image={queenLilibet} name="Queen Lilibet" />
     </ul>
   </section>
-  <section id="ubicaciones" class="mx-2 scroll-mt-24 bg-light p-40 sm:mx-4">
-    <div class="hidden flex-col gap-20 sm:flex">
+  <section
+    id="ubicaciones"
+    class="mx-2 scroll-mt-24 bg-light px-page py-20 sm:mx-4 sm:p-40"
+  >
+    <div class="flex flex-col gap-12 sm:gap-20">
       <div class="flex items-center gap-4">
-        <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-        <h3 class="text-3xl font-bold uppercase">
+        <span class="hidden h-[2px] w-12 bg-dark sm:block" aria-hidden="true"
+        ></span>
+        <h3 class="text-2xl font-bold uppercase sm:text-3xl">
           Nuestras <span class="text-brand-3">Sucursales</span>
         </h3>
       </div>
-      <div class="flex flex-col gap-8">
-        <h4 class="uppercase tracking-widest">Monterrey Solo por Rappi en:</h4>
-        <ul class="flex flex-wrap gap-12">
+      <div class="flex flex-col gap-6 sm:gap-8">
+        <h4 class="text-sm uppercase tracking-widest sm:text-base">
+          Monterrey Solo por Rappi en:
+        </h4>
+        <ul class="flex flex-wrap gap-4 sm:gap-12">
           {
             sucursalesRappi.map((sucursal) => (
-              <li class="relative flex-shrink-0 text-xl font-medium before:absolute before:-left-3 before:top-1/2 before:size-1 before:-translate-y-1/2 before:bg-dark">
+              <li class="relative flex-shrink-0 text-xs font-medium sm:text-xl">
+                <span
+                  aria-hidden="true"
+                  class="absolute -left-2 top-1/2 size-[2px] -translate-y-1/2 bg-dark sm:-left-3 sm:size-1"
+                />
                 {sucursal}
               </li>
             ))
           }
         </ul>
       </div>
-      <div class="flex flex-col gap-8">
-        <h4 class="uppercase tracking-widest">Sucursales Físicas:</h4>
+      <div class="flex flex-col gap-6 sm:gap-8">
+        <h4 class="text-sm uppercase tracking-widest sm:text-base">
+          Sucursales Físicas:
+        </h4>
         <LocationTabs client:visible />
       </div>
     </div>

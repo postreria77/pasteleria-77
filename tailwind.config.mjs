@@ -12,6 +12,9 @@ export default {
         brand: "#A2D8C8",
         "brand-2": "#1F473B",
         "brand-3": "#49AB8E",
+        "header-1": "#0B0A09",
+        "header-2": "#161413",
+        "header-3": "#2C2825",
       },
       spacing: {
         page: "var(--page-spacing)",
