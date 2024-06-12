@@ -11,8 +11,8 @@ const { image, name } = Astro.props;
 ---
 
 <li>
-  <a href="/menu" class="flex-shrink-0 flex flex-col items-center gap-8 w-72">
+  <a href="/menu" class="flex-shrink-0 flex flex-col items-center gap-4 sm:gap-8 w-60 sm:w-72">
   <Image src={image} alt={name} class="aspect-[7/8]"/>
-  <h4 class="font-medium uppercase">{name}</h4>
+  <h4 class="text-xs sm:text-base font-medium uppercase">{name}</h4>
   </a>
 </li>

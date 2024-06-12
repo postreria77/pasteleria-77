@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/ui/Button.astro";
 import { Image } from "astro:assets";
 import MarqueeCard from "../components/MarqueeCard.astro";
-import LocationTabs from "../components/locations/LocationTabs.jsx"
+import LocationTabs from "../components/locations/LocationTabs.jsx";
 
 //Asset Imports
 import hero from "../assets/home-header.png";
@@ -20,7 +20,17 @@ import kingChocolate from "../assets/covers/king-chocolate.png";
 import magnolias from "../assets/covers/magnolias.png";
 import queenLilibet from "../assets/covers/queen-lilibet.png";
 
-const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", "Contry", "Carranza", "Cumbres", "Sendero"]
+const sucursalesRappi = [
+  "Qin",
+  "Serena",
+  "La Fe",
+  "Arboleda",
+  "San Jerónimo",
+  "Contry",
+  "Carranza",
+  "Cumbres",
+  "Sendero",
+];
 ---
 
 <script src="../utils/homeAnimations.js"></script>
@@ -30,16 +40,16 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
   description="Encuentra toda la variedad de pasteles de los restaurantes de La Postreria 77, productos exclusivos de La Pastelería, y artículos para decorar tus pasteles."
 >
   <header
-    class="bg-hero object-cover object-right-bottom text-light min-h-screen pl-16 flex items-center overflow-clip lg:mx-4"
+    class="flex min-h-screen flex-col overflow-clip bg-hero object-cover object-right-bottom pl-16 text-light sm:flex-row sm:items-center lg:mx-4"
   >
-    <div class="flex flex-col gap-2 items-start flex-shrink-0">
-      <span class="font-light uppercase tracking-[0.15rem] text-xs mb-6"
+    <div class="flex flex-shrink-0 flex-col items-start gap-2">
+      <span class="mb-6 text-xs font-light uppercase tracking-[0.15rem]"
         >Pasteles, Panqués, Postres y Artículos de fiesta</span
       >
-      <h1 class="uppercase font-bold text-4xl">
+      <h1 class="text-4xl font-bold uppercase">
         Pastelerías de <span class="text-brand">calidad</span>.
       </h1>
-      <p class="max-w-[50ch] text-balance leading-loose font-light mb-8">
+      <p class="mb-8 max-w-[50ch] text-balance font-light leading-loose">
         Encuentra toda la variedad de pasteles de los restaurantes de <span
           class="font-medium">La Postreria 77</span
         >, productos exclusivos de La Pastelería, y artículos para decorar tus
@@ -47,27 +57,27 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
       </p>
       <Button arrow href="/menu">Ver Menú</Button>
     </div>
-    <div >
+    <div>
       <Image
         src={hero}
         alt="Nuestro pastel Almond Toffee en tamaño Anytime."
-        class="w-full min-w-[40rem] scale-125 origin-top-left"
+        class="w-full min-w-[40rem] origin-top-left scale-125"
       />
     </div>
   </header>
   <section class="py-24">
-    <div class="flex flex-col gap-2 text-center items-center px-page">
+    <div class="flex flex-col items-center gap-2 px-page text-center">
       <h2 class="text-4xl font-bold uppercase">Somos una promesa de calidad</h2>
-      <p class="leading-loose max-w-prose">
+      <p class="max-w-prose leading-loose">
         Todos nuestro productos son elaborados diariamente, con procesos
         artesanales y productos de las mejores marcas del mercado que aseguran
         brindarte una experiencia incomparable.
       </p>
     </div>
   </section>
-  <section class="bg-light p-40 mx-4">
-    <div class="flex gap-16 items-center justify-center">
-      <div class="relative flex-shrink-0 z-10">
+  <section class="mx-2 bg-light p-40 sm:mx-4">
+    <div class="hidden items-center justify-center gap-16 sm:flex">
+      <div class="relative z-10 flex-shrink-0">
         <span
           class="absolute -inset-[8px] border-[0.5px] border-dark"
           aria-hidden="true"></span>
@@ -77,17 +87,17 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
         <Image
           src={decor}
           alt="Dos pasteles de pistache decorados con nuestros artículos de arcoíris."
-          class="w-full max-w-xl aspect-[16/10] object-cover"
+          class="aspect-[16/10] w-full max-w-xl object-cover"
         />
       </div>
       <div class="flex flex-col items-start gap-4">
-        <div class="flex gap-4 items-center">
+        <div class="flex items-center gap-4">
           <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-          <h3 class="font-bold text-3xl uppercase">
+          <h3 class="text-3xl font-bold uppercase">
             Ideas de <span class="text-brand-3">Decoración</span>
           </h3>
         </div>
-        <p class="leading-loose mb-4">
+        <p class="mb-4 leading-loose">
           Todos nuestro productos son elaborados diariamente, con procesos
           artesanales y productos de las mejores marcas del mercado que aseguran
           brindarte una experiencia incomparable.
@@ -103,9 +113,9 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
       </div>
     </div>
   </section>
-  <section class="py-16 flex gap-4 group overflow-clip">
+  <section class="group flex gap-4 overflow-clip py-16">
     <ul
-      class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+      class="flex animate-marquee gap-2 group-hover:[animation-play-state:paused] sm:gap-4"
     >
       <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional" />
       <MarqueeCard image={pastelAnytime} name="Pasteles Anytime" />
@@ -118,7 +128,7 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
       <MarqueeCard image={queenLilibet} name="Queen Lilibet" />
     </ul>
     <ul
-      class="flex gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+      class="flex animate-marquee gap-2 group-hover:[animation-play-state:paused] sm:gap-4"
       aria-hidden="true"
     >
       <MarqueeCard image={pastelTradicional} name="Pasteles Tradicional" />
@@ -132,18 +142,24 @@ const sucursalesRappi = ["Qin", "Serena", "La Fe", "Arboleda", "San Jerónimo", 
       <MarqueeCard image={queenLilibet} name="Queen Lilibet" />
     </ul>
   </section>
-  <section id="ubicaciones" class="p-40 bg-light mx-4 scroll-mt-24">
-    <div class="flex flex-col gap-20">
-      <div class="flex gap-4 items-center">
+  <section id="ubicaciones" class="mx-2 scroll-mt-24 bg-light p-40 sm:mx-4">
+    <div class="hidden flex-col gap-20 sm:flex">
+      <div class="flex items-center gap-4">
         <span class="h-[2px] w-12 bg-dark" aria-hidden="true"></span>
-        <h3 class="font-bold text-3xl uppercase">
+        <h3 class="text-3xl font-bold uppercase">
           Nuestras <span class="text-brand-3">Sucursales</span>
         </h3>
       </div>
       <div class="flex flex-col gap-8">
         <h4 class="uppercase tracking-widest">Monterrey Solo por Rappi en:</h4>
-        <ul class="flex gap-12 flex-wrap">
-          {sucursalesRappi.map((sucursal) => <li class="font-medium text-xl relative before:absolute before:size-1 before:bg-dark before:-left-3 before:top-1/2 before:-translate-y-1/2 flex-shrink-0">{sucursal}</li>)}
+        <ul class="flex flex-wrap gap-12">
+          {
+            sucursalesRappi.map((sucursal) => (
+              <li class="relative flex-shrink-0 text-xl font-medium before:absolute before:-left-3 before:top-1/2 before:size-1 before:-translate-y-1/2 before:bg-dark">
+                {sucursal}
+              </li>
+            ))
+          }
         </ul>
       </div>
       <div class="flex flex-col gap-8">

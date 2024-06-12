@@ -58,7 +58,7 @@ importers:
         version: 5.3.3
     devDependencies:
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       prettier-plugin-astro:
         specifier: ^0.12.3
