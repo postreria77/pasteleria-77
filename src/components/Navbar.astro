@@ -22,17 +22,26 @@ const links = [
 ];
 ---
 
-<nav class="py-4 pt-4 sm:pb-6 sm:pt-8 px-page lg:px-16 sticky top-0 left-0 right-0 w-full bg-brand z-50">
+<!-- <script src="../utils/mobileMenu.js"></script>-->
+<nav
+  class="sticky left-0 right-0 top-0 z-50 w-full bg-brand px-page py-4 pt-4 sm:pb-6 sm:pt-8 lg:px-16"
+>
   <div class="flex items-center justify-between">
     <a href="/">
-    <Icon name="logo" class="aspect-[14/5] w-24 sm:w-32 lg:w-36 h-full origin-top-left" id="navLogo" />
+      <Icon
+        name="logo"
+        class="relative z-50 aspect-[14/5] h-full w-24 origin-top-left sm:w-32 lg:w-36"
+        id="navLogo"
+      />
     </a>
-    <menu class="hidden sm:flex gap-4 lg:gap-8 items-center">
-      {
-        links.map((link) => <Navlink href={link.url} text={link.label} />)
-      }
-      <Icon name="separator" aria-hidden="true" />
+    <menu
+      class="fixed inset-0 z-30 flex h-full w-full flex-col items-center justify-center gap-4 bg-brand sm:relative sm:h-auto sm:w-auto sm:flex-row sm:bg-none lg:gap-8"
+    >
+      {links.map((link) => <Navlink href={link.url} text={link.label} />)}
+      <Icon name="separator" aria-hidden="true" class="rotate-90 sm:rotate-0" />
       <Navlink href="https://lapostreria77.com" text="La Postreria 77" />
     </menu>
+    <canvas id="mobileMenu" class="relative z-50 block size-8 sm:hidden"
+    ></canvas>
   </div>
 </nav>
