@@ -35,13 +35,16 @@ const links = [
       />
     </a>
     <menu
-      class="fixed inset-0 z-30 flex h-full w-full flex-col items-center justify-center gap-4 bg-brand sm:relative sm:h-auto sm:w-auto sm:flex-row sm:bg-none lg:gap-8"
+      id="navMenu"
+      class="fixed inset-0 z-30 flex h-full w-full -translate-y-full flex-col items-center justify-center gap-6 bg-brand sm:relative sm:h-auto sm:w-auto sm:-translate-y-0 sm:flex-row sm:gap-4 sm:bg-opacity-0 lg:gap-8"
     >
       {links.map((link) => <Navlink href={link.url} text={link.label} />)}
       <Icon name="separator" aria-hidden="true" class="rotate-90 sm:rotate-0" />
       <Navlink href="https://lapostreria77.com" text="La Postreria 77" />
     </menu>
-    <canvas id="mobileMenu" class="relative z-50 block size-8 sm:hidden"
-    ></canvas>
+    <button id="menuButton" class="block sm:hidden">
+      <canvas id="menuCanvas" class="relative z-50 block size-8 sm:hidden"
+      ></canvas>
+    </button>
   </div>
 </nav>

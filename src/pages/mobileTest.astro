@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
   description="Test for Rive Animation implementation."
 >
   <main
-    class="m-pagb flex flex-col gap-12 min-h-screen items-center justify-center bg-dark px-page text-light"
+    class="m-pagb flex min-h-screen flex-col items-center justify-center gap-12 bg-dark px-page text-light"
   >
     <h1>Rive Animation</h1>
     <canvas id="mobileMenu" class="size-8"></canvas>
@@ -15,3 +15,10 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script src="../utils/mobileMenu.js"></script>
+<script>
+  const menuButton = document.getElementById("menuButton");
+  menuButton.addEventListener("click", () => {
+    console.log("clicked");
+  });
+  console.log(menuButton);
+</script>
