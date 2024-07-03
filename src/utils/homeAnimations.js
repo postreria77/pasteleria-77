@@ -16,6 +16,7 @@ const navTl = gsap.timeline({
     },
 });
 
-navTl.from("nav", { backgroundColor: "rgba(0, 0, 0, 0)", color: "white", paddingTop: "3rem" });
+navTl.from("#menuCanvas", { filter: "invert(1)" });
+navTl.from("nav", { backgroundColor: "rgba(0, 0, 0, 0)", color: "white", paddingTop: "3rem" }, "<");
 navTl.from("#navLogo", { scale: 1.25 })
 });

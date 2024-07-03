@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const openMenu = gsap.timeline({ paused: true });
 
+    openMenu.to('nav', {color: 'black'})
+    openMenu.to("#menuCanvas", { filter: "invert(0)" }, "<");
     openMenu.fromTo(
       "#navMenu",
       {
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         translateY: 0,
         duration: 0.8,
         ease: "power4.out",
-      },
+      }, "<"
     );
     openMenu.fromTo(
       navLinks,
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const closeMenu = gsap.timeline({ paused: true });
 
+    closeMenu.to('nav', {color: 'inherit'})
     closeMenu.fromTo(
       navLinks,
       { opacity: 1 },
