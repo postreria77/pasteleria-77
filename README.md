@@ -13,9 +13,9 @@ Utilizamos Astro JS como meta framework para manejar el routing y la administrac
 - [X] Sección de Ubicaciones
 - [X] Footer y Navbar
 - [X] Menú de productos
-- [] Actualizar header con nueva foto y fondo
+- [X] Actualizar header con nueva foto y fondo
 - [] Añadir banner de café en menú
-- [] Añadir Menú Móvil
+- [X] Añadir Menú Móvil
 - [X] Añadir Astro DB para manejar los productos
 - [] Animaciones
 - [X] Añadir Astro SEO para manejar metadata

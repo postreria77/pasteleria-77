@@ -28,6 +28,13 @@ const Productos = defineTable({
   }
 })
 
+const Bebidas = defineTable({
+    columns: {
+      name: column.text(),
+      price: column.number(),
+    }
+})
+
 export default defineDb({
-  tables: { Pasteles, Productos, Categories },
+  tables: { Pasteles, Productos, Categories, Bebidas },
 });
