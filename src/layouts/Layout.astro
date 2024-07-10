@@ -32,11 +32,11 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="font-body bg-brand overflow-x-clip">
-    <div class="fixed top-0 left-0 right-0 w-full h-4 bg-brand z-40"></div>
+    <div class="fixed top-0 left-0 right-0 w-full h-4 bg-brand z-30"></div>
     <Navbar />
     <slot />
-    <div class="fixed bottom-0 left-0 right-0 w-full h-2 sm:h-4 bg-brand z-40"></div>
     <Footer />
+    <div class="fixed bottom-0 left-0 right-0 w-full h-2 sm:h-4 bg-brand z-30"></div>
     <style is:global>
       :root {
         /* Spacing Scales */
