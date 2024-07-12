@@ -10,6 +10,7 @@ export default async function () {
       tradicional: true,
       anytime: true,
       rebanadaAnytime: true,
+      nuevo: true,
     },
     {
       name: "Lord Mostachón",
@@ -19,6 +20,7 @@ export default async function () {
       tradicional: false,
       anytime: true,
       rebanadaAnytime: false,
+      nuevo: false
     },
     {
       name: "Pecan Pie Cake",
@@ -28,6 +30,7 @@ export default async function () {
       tradicional: true,
       anytime: true,
       rebanadaAnytime: false,
+      nuevo: false
     },
   ]);
 

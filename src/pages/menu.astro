@@ -50,7 +50,9 @@ import cafeBg from "../assets/menu/cafe-bg.png";
           alt="Pastel Tamaño Tradicional."
           title="Tamaño Tradicional"
           price={1250}
-          flavors="*Charol, Ferrero, Red Velvet, Zanahoria, Pecan Pie Cake, Carlotta, Cheesecake Brownie, Cheesecake Tortuga."
+          flavors={pasteles
+            .filter((p) => p.tradicional === true)
+            .map((pastel) => pastel.name)}
           icon="cake"
         />
         <CakeFlavs
@@ -58,7 +60,9 @@ import cafeBg from "../assets/menu/cafe-bg.png";
           alt="Pastel Tamaño Anytime."
           title="Tamaño Anytime"
           price={590}
-          flavors="*Pistache, Matilda, Red Velvet, Carlotta, Charol, Ferrero, Zanahoria, Pecan Pie Cake, Almond Toffee, Lord Mostachón, Lady Berry, Cheesecake Plátano, Cheesecake Tortuga, Cheesecake Brownie. "
+          flavors={pasteles
+            .filter((p) => p.anytime === true)
+            .map((pastel) => pastel.name)}
           icon="cake"
         />
         <CakeFlavs
@@ -66,34 +70,16 @@ import cafeBg from "../assets/menu/cafe-bg.png";
           alt="Pastel Tamaño Tradicional."
           title="Rebanada Anytime"
           price={149}
-          flavors="*Charol, Matilda, Red Velvet, Ferrero, Zanahoria."
+          flavors={pasteles
+            .filter((p) => p.rebanadaAnytime === true)
+            .map((pastel) => pastel.name)}
           icon="slice"
         />
       </ul>
       <ul
         class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
       >
-        {
-          pasteles.map(
-            ({
-              name,
-              description,
-              image,
-              tradicional,
-              anytime,
-              rebanadaAnytime,
-            }) => (
-              <PastelesCard
-                name={name}
-                description={description}
-                image={image}
-                tradicional={tradicional}
-                anytime={anytime}
-                rebanadaAnytime={rebanadaAnytime}
-              />
-            ),
-          )
-        }
+        {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
       </ul>
     </header>
     <section
@@ -173,24 +159,40 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         class="absolute inset-0 h-full w-full object-cover object-bottom"
       />
       <div
-        class="relative flex flex-col-reverse sm:flex-row pt-8 h-full w-full items-center gap-12 lg:gap-20 px-page"
+        class="relative flex h-full w-full flex-col-reverse items-center gap-12 px-page pt-8 sm:flex-row lg:gap-20"
       >
-        <Image src={cafe} alt="Cafe" class="h-full w-full sm:w-2/5 object-cover object-bottom" />
-        <div class="flex flex-col w-full sm:pb-8 h-full">
-          <div class="flex items-center gap-4 lg:gap-12 justify-between">
-            <Icon name="coffee/kind" class="h-full w-full aspect-[3/2] lg:aspect-[5/2]" />
-            <Icon name="coffee/roast" class="h-full w-full aspect-[13/2]" />
-            <h4 class="text-3xl sm:text-4xl lg:text-6xl font-bold">$490</h4>
+        <Image
+          src={cafe}
+          alt="Cafe"
+          class="h-full w-full object-cover object-bottom sm:w-2/5"
+        />
+        <div class="flex h-full w-full flex-col sm:pb-8">
+          <div class="flex items-center justify-between gap-4 lg:gap-12">
+            <Icon
+              name="coffee/kind"
+              class="aspect-[3/2] h-full w-full lg:aspect-[5/2]"
+            />
+            <Icon name="coffee/roast" class="aspect-[13/2] h-full w-full" />
+            <h4 class="text-3xl font-bold sm:text-4xl lg:text-6xl">$490</h4>
           </div>
-          <div class="flex flex-col mb-8">
-            <Icon name="coffee/logo" class="w-full h-full aspect-[8/1.5] object-bottom origin-bottom " />
-            <p class="text-base lg:text-xl leading-relaxed">
+          <div class="mb-8 flex flex-col">
+            <Icon
+              name="coffee/logo"
+              class="aspect-[8/1.5] h-full w-full origin-bottom object-bottom"
+            />
+            <p class="text-base leading-relaxed lg:text-xl">
               Un Café de Micro lote único, cosechado exclusivamente para Grupo
               Postreria y nuestros clientes más especiales.
             </p>
           </div>
           <div class="flex">
-          <Button arrow href="https://www.lapostreria77.com/cafe" newTab={true}>Mas Información</Button>
+            <Button
+              arrow
+              href="https://www.lapostreria77.com/cafe"
+              newTab={true}
+            >
+              Mas Información
+            </Button>
           </div>
         </div>
       </div>

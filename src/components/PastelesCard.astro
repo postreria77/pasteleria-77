@@ -1,21 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import New from "./ui/New.astro";
 
-interface Props {
-  name: string;
-  description: string;
-  image: string;
-  tradicional: boolean;
-  anytime: boolean;
-  rebanadaAnytime: boolean;
-}
 
-const { name, description, image, tradicional, anytime, rebanadaAnytime } =
-  Astro.props;
+const { name, description, image, tradicional, anytime, rebanadaAnytime, nuevo } = Astro.props;
 ---
 
-<li class="flex flex-col gap-4">
+<li class="relative flex flex-col gap-4">
+  {nuevo && <New />}
   <Image
     src={image}
     alt={name}

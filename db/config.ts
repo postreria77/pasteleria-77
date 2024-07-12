@@ -8,6 +8,7 @@ const Pasteles = defineTable({
     tradicional: column.boolean(),
     anytime: column.boolean(),
     rebanadaAnytime: column.boolean(),
+    nuevo: column.boolean({ default: false }),
   }
 })
 

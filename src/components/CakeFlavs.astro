@@ -9,7 +9,7 @@ interface Props {
   icon: string;
   title: string;
   price: number;
-  flavors: string;
+  flavors: string[];
 }
 
 const { image, alt, icon, title, price, flavors } = Astro.props;
@@ -24,5 +24,5 @@ const { image, alt, icon, title, price, flavors } = Astro.props;
     </div>
     <h4 class="font-bold text-xl leading-none">${price}</h4>
   </div>
-  <p class="text-[10px] lg:text-sm opacity-60 text-light">{flavors}</p>
+  <p class="text-[10px] lg:text-sm opacity-60 text-light">* {flavors.map((flavor, index) => (index === flavors.length - 1 ? `${flavor}.` : `${flavor}, `))}</p>
 </li>
