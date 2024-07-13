@@ -2,6 +2,13 @@
 //Database imports
 import { db, Pasteles, Productos, Bebidas } from "astro:db";
 const pasteles = await db.select().from(Pasteles);
+pasteles.sort((a, b) => {
+    if (a.nuevo === b.nuevo) {
+      return 0;
+    }
+    return a.nuevo ? -1 : 1;
+  });
+
 const productos = await db.select().from(Productos);
 const bebidas = await db.select().from(Bebidas);
 
