@@ -3,17 +3,18 @@
 import { db, Pasteles, Productos, Bebidas } from "astro:db";
 const pasteles = await db.select().from(Pasteles);
 pasteles.sort((a, b) => {
-    if (a.nuevo === b.nuevo) {
-      return 0;
-    }
-    return a.nuevo ? -1 : 1;
-  });
+  if (a.nuevo === b.nuevo) {
+    return 0;
+  }
+  return a.nuevo ? -1 : 1;
+});
 
 const productos = await db.select().from(Productos);
 const bebidas = await db.select().from(Bebidas);
 
 const panques = productos.filter((producto) => producto.categoryId === 1);
 const postres = productos.filter((producto) => producto.categoryId === 2);
+const biscochuelos = productos.filter((producto) => producto.categoryId === 3);
 
 //Component imports
 import Layout from "../layouts/Layout.astro";
@@ -38,6 +39,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
   description="Consulta nuestro menú y descubre tu nuevo postre favorito."
 >
   <main class="gap-12 bg-brand text-light">
+    <!-- Pasteles -->
     <header
       class="mx-2 flex flex-col gap-8 bg-dark px-page py-16 pt-10 sm:mx-4 sm:gap-12 sm:py-20 lg:gap-16"
     >
@@ -89,6 +91,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
       </ul>
     </header>
+    <!-- Panques -->
     <section
       class="xs:py-12 mx-2 flex flex-col gap-8 bg-dark px-page sm:mx-4 sm:gap-12 sm:py-16 lg:gap-16 lg:py-20"
     >
@@ -96,18 +99,10 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       <ul
         class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
       >
-        {
-          panques.map(({ image, name, price, description }) => (
-            <ProductCard
-              image={image}
-              name={name}
-              price={price}
-              description={description}
-            />
-          ))
-        }
+        {panques.map((panque) => <ProductCard {...panque} />)}
       </ul>
     </section>
+    <!-- Postres -->
     <section
       class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
     >
@@ -156,6 +151,18 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         }
       </ul>
     </section>
+    <!-- Biscochuelos -->
+    <section
+      class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
+    >
+      <h2 class="text-xl font-bold uppercase sm:text-2xl">Biscochuelos</h2>
+      <ul
+        class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
+      >
+        {biscochuelos.map((biscochuelo) => <ProductCard {...biscochuelo} />)}
+      </ul>
+    </section>
+    <!-- Café Banner -->
     <section
       class="relative mx-2 min-h-96 border-b-8 border-t-8 border-b-brand border-t-brand bg-dark-2 sm:mx-4 sm:border-b-[16px] sm:border-t-[16px]"
     >
@@ -204,6 +211,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         </div>
       </div>
     </section>
+    <!-- Bebidas -->
     <section
       class="sm:;gap-12 mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 lg:gap-16"
     >

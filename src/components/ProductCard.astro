@@ -1,17 +1,20 @@
 ---
 import { Image } from "astro:assets";
+import New from "./ui/New.astro";
 
-interface Props {
-  image: string;
-  name: string;
-  price: number;
-  description: string;
-}
+// interface Props {
+//   image: string;
+//   name: string;
+//   price: number;
+//   description: string;
+//   nuevo?: boolean;
+// }
 
-const { image, name, price, description } = Astro.props;
+const { nuevo, image, name, price, description } = Astro.props;
 ---
 
-<li class="flex flex-col gap-4">
+<li class="relative flex flex-col gap-4">
+  {nuevo && <New />}
   <Image
     src={image}
     alt={name}
@@ -21,9 +24,9 @@ const { image, name, price, description } = Astro.props;
   />
   <div>
     <div class="flex items-center justify-between gap-4">
-      <h3 class="text-xs lg:text-xl font-medium">{name}</h3>
-      <h4 class="text-xs lg:text-xl font-medium">${price}</h4>
+      <h3 class="text-xs font-medium lg:text-xl">{name}</h3>
+      <h4 class="text-xs font-medium lg:text-xl">${price}</h4>
     </div>
-    <p class="text-[10px] lg:text-sm opacity-60">{description}</p>
+    <p class="text-[10px] opacity-60 lg:text-sm">{description}</p>
   </div>
 </li>
