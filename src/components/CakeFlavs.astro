@@ -10,19 +10,27 @@ interface Props {
   title: string;
   price: number;
   flavors: string[];
+  extra?: string;
 }
 
-const { image, alt, icon, title, price, flavors } = Astro.props;
+const { image, alt, icon, title, price, flavors, extra } = Astro.props;
 ---
 
 <li class="lg:min-w-80">
   <Image src={image} alt={alt} class="w-48 lg:w-60" />
-  <div class="flex items-end gap-8 mt-4 mb-2">
+  <div class="mb-2 mt-4 flex items-end gap-8">
     <div class="flex items-baseline gap-3">
       <Icon name={icon} class="size-5 lg:size-6" />
-      <h4 class="font-medium text-lg lg:text-xl leading-none">{title}</h4>
+      <h4 class="text-lg font-medium leading-none lg:text-xl">{title}</h4>
     </div>
-    <h4 class="font-bold text-xl leading-none">${price}</h4>
+    <h4 class="text-xl font-bold leading-none">${price}</h4>
   </div>
-  <p class="text-[10px] lg:text-sm opacity-60 text-light">* {flavors.map((flavor, index) => (index === flavors.length - 1 ? `${flavor}.` : `${flavor}, `))}</p>
+  <p class="mb-2 text-[10px] uppercase">{extra}</p>
+  <p class="text-[10px] text-light opacity-60 lg:text-sm">
+    * {
+      flavors.map((flavor, index) =>
+        index === flavors.length - 1 ? `${flavor}.` : `${flavor}, `,
+      )
+    }
+  </p>
 </li>
