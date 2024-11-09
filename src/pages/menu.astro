@@ -1,7 +1,11 @@
 ---
 //Database imports
-import { db, Pasteles, Productos, Bebidas } from "astro:db";
-const pasteles = await db.select().from(Pasteles);
+import { db, Pasteles, Productos, Bebidas, eq } from "astro:db";
+const pasteles = await db
+  .select()
+  .from(Pasteles)
+  .where(eq(Pasteles.archived, false));
+
 pasteles.sort((a, b) => {
   if (a.nuevo === b.nuevo) {
     return 0;
@@ -89,11 +93,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       <ul
         class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
       >
-        {
-          pasteles
-            .filter((pastel) => pastel.archived === false)
-            .map((pastel) => <PastelesCard {...pastel} />)
-        }
+        {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
       </ul>
     </header>
     <!-- Panques -->
