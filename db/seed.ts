@@ -20,7 +20,7 @@ export default async function () {
       tradicional: false,
       anytime: true,
       rebanadaAnytime: false,
-      nuevo: false
+      nuevo: false,
     },
     {
       name: "Pecan Pie Cake",
@@ -30,7 +30,6 @@ export default async function () {
       tradicional: true,
       anytime: true,
       rebanadaAnytime: false,
-      nuevo: false
     },
   ]);
 

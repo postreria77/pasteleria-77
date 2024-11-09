@@ -9,6 +9,7 @@ const Pasteles = defineTable({
     anytime: column.boolean(),
     rebanadaAnytime: column.boolean(),
     nuevo: column.boolean({ default: false }),
+    archived: column.boolean({ default: false }),
   },
 });
 
