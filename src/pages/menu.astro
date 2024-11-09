@@ -1,7 +1,10 @@
 ---
 //Database imports
-import { db, Pasteles, Productos, Bebidas } from "astro:db";
-const pasteles = await db.select().from(Pasteles);
+import { db, Pasteles, Productos, Bebidas, eq } from "astro:db";
+const pasteles = await db
+  .select()
+  .from(Pasteles)
+  .where(eq(Pasteles.archived, false));
 
 pasteles.sort((a, b) => {
   if (a.nuevo === b.nuevo) {
