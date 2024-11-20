@@ -1,24 +1,37 @@
 ---
 //Database imports
-import { db, Pasteles, Productos, Bebidas, eq } from "astro:db";
+import { db, Pasteles, Productos, Bebidas, eq, desc } from "astro:db";
 const pasteles = await db
   .select()
   .from(Pasteles)
-  .where(eq(Pasteles.archived, false));
+  .where(eq(Pasteles.archived, false))
+  .orderBy(desc(Pasteles.nuevo));
 
-pasteles.sort((a, b) => {
-  if (a.nuevo === b.nuevo) {
-    return 0;
-  }
-  return a.nuevo ? -1 : 1;
-});
+const panques = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 1))
+  .orderBy(desc(Productos.nuevo));
 
-const productos = await db.select().from(Productos);
+const postres = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 2))
+  .orderBy(desc(Productos.nuevo));
+
+const biscochuelos = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 3))
+  .orderBy(desc(Productos.nuevo));
+
+const conchasWaffle = await db
+  .select()
+  .from(Productos)
+  .where(eq(Productos.categoryId, 4))
+  .orderBy(desc(Productos.nuevo));
+
 const bebidas = await db.select().from(Bebidas);
-
-const panques = productos.filter((producto) => producto.categoryId === 1);
-const postres = productos.filter((producto) => producto.categoryId === 2);
-const biscochuelos = productos.filter((producto) => producto.categoryId === 3);
 
 //Component imports
 import Layout from "../layouts/Layout.astro";
@@ -154,6 +167,17 @@ import cafeBg from "../assets/menu/cafe-bg.png";
             />
           ))
         }
+      </ul>
+    </section>
+    <!-- Conchas Waffle -->
+    <section
+      class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
+    >
+      <h2 class="text-xl font-bold uppercase sm:text-2xl">Conchas Waffle</h2>
+      <ul
+        class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
+      >
+        {conchasWaffle.map((conchaWaffle) => <ProductCard {...conchaWaffle} />)}
       </ul>
     </section>
     <!-- Biscochuelos -->
