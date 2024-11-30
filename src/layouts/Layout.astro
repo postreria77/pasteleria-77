@@ -1,13 +1,14 @@
 ---
+import { SEO } from "astro-seo";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
   title: string;
   description: string;
 }
 
 const { title, description } = Astro.props;
-import { SEO } from "astro-seo";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -20,7 +21,7 @@ import Footer from "../components/Footer.astro";
         basic: {
           title: "La Pastelería de La Postreria",
           type: "website",
-          image: "https://pasteleria-77.vercel.app/webclip.png",
+          image: "https://lapasteleriadelapostreria.com/webclip.png",
         },
       }}
     />
@@ -31,12 +32,13 @@ import Footer from "../components/Footer.astro";
     <link rel="stylesheet" href="../fonts.css" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="font-body bg-brand overflow-x-clip">
-    <div class="fixed top-0 left-0 right-0 w-full h-4 bg-brand z-30"></div>
+  <body class="overflow-x-clip bg-brand font-body">
+    <div class="fixed left-0 right-0 top-0 z-30 h-4 w-full bg-brand"></div>
     <Navbar />
     <slot />
     <Footer />
-    <div class="fixed bottom-0 left-0 right-0 w-full h-2 sm:h-4 bg-brand z-30"></div>
+    <div class="fixed bottom-0 left-0 right-0 z-30 h-2 w-full bg-brand sm:h-4">
+    </div>
     <style is:global>
       :root {
         /* Spacing Scales */

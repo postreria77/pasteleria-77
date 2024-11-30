@@ -15,7 +15,7 @@ export const locations: Location[] = [
     image: '/images/sucursales/parque-centro.jpg',
     address: 'Edificio MAIA, Blvd. Parque Centro #1425 local CM-A Parque Centro, 25240. Saltillo, Coahuila.',
     phone: '81 2474 8801',
-    hours: ['Lunes a Sabado / 9:00 - 20:00 hrs.', 'Domingo / 10:00 - 19:00 hrs.'],
+    hours: ['Lunes a Sabado / 9:00 - 22:00 hrs.', 'Domingo / 10:00 - 19:00 hrs.'],
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.530233733835!2d-100.98430002460982!3d25.45396442754668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86886dd7d8d78425%3A0xa5388b89198fd0b6!2sLa%20Pasteler%C3%ADa%20de%20La%20Postreria%20%7C%20Parque%20Centro!5e0!3m2!1ses-419!2smx!4v1717878948786!5m2!1ses-419!2smx'
   },
   {
