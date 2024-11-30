@@ -24,7 +24,7 @@ export const locations: Location[] = [
     image: '/images/sucursales/herradura.jpg',
     address: 'Carretera Nacional 1000 A, Esq. Portal del Huajuco Col. La Herradura Carretera Nacional 67140 Monterrey, Nuevo León.',
     phone: '81 2474 8801',
-    hours: ['Lunes a Sábado / 9:00 - 22:00 hrs.', 'Domingo / 10:00 - 19:00 hrs.', 'Rappi / 9:00 - 22:00 hrs.'],
+    hours: ['Lunes a Sábado / 9:00 - 22:00 hrs.', 'Domingo / 10:00 - 19:00 hrs.', 'Rappi / 10:00 - 22:00 hrs.'],
     map: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14397.517126447476!2d-100.2336834!3d25.5590453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662c75725046235%3A0xc811528b5c94d2fb!2sLa%20Pasteleria%20de%20la%20Postreria%20%7C%20Herradura!5e0!3m2!1ses-419!2smx!4v1717878425484!5m2!1ses-419!2smx' 
   }
 ]
