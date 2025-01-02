@@ -1,6 +1,6 @@
 ---
 //Database imports
-import { db, Pasteles, Productos, Bebidas, eq, desc } from "astro:db";
+import { db, Pasteles, Productos, Bebidas, eq, desc, and } from "astro:db";
 const pasteles = await db
   .select()
   .from(Pasteles)
@@ -10,25 +10,25 @@ const pasteles = await db
 const panques = await db
   .select()
   .from(Productos)
-  .where(eq(Productos.categoryId, 1))
+  .where(and(eq(Productos.categoryId, 1), eq(Productos.archived, false)))
   .orderBy(desc(Productos.nuevo));
 
 const postres = await db
   .select()
   .from(Productos)
-  .where(eq(Productos.categoryId, 2))
+  .where(and(eq(Productos.categoryId, 2), eq(Productos.archived, false)))
   .orderBy(desc(Productos.nuevo));
 
 const biscochuelos = await db
   .select()
   .from(Productos)
-  .where(eq(Productos.categoryId, 3))
+  .where(and(eq(Productos.categoryId, 3), eq(Productos.archived, false)))
   .orderBy(desc(Productos.nuevo));
 
 const conchasWaffle = await db
   .select()
   .from(Productos)
-  .where(eq(Productos.categoryId, 4))
+  .where(and(eq(Productos.categoryId, 4), eq(Productos.archived, false)))
   .orderBy(desc(Productos.nuevo));
 
 const bebidas = await db.select().from(Bebidas);

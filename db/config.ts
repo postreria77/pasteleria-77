@@ -28,6 +28,7 @@ const Productos = defineTable({
     image: column.text(),
     categoryId: column.number({ references: () => Categories.columns.id }),
     nuevo: column.boolean({ default: false }),
+    archived: column.boolean({ default: false }),
   },
 });
 
