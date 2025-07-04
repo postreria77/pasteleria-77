@@ -89,14 +89,14 @@ import cafeBg from "../assets/menu/cafe-bg.png";
   </li>
   <li class="flex flex-col items-center justify-between h-full">
     <CakeFlavs
-      image={tradicional} <!-- cámbiala si tienes imagen específica para gift -->
+      image={tradicional}
       alt="Pastel Tamaño Gift."
       title="Tamaño Gift"
       price={350}
       flavors={pasteles
         .filter((p) => p.gift === true)
         .map((pastel) => pastel.name)}
-      icon="gift"
+      icon="cake"
     />
   </li>
  </ul>
