@@ -85,17 +85,6 @@ import cafeBg from "../assets/menu/cafe-bg.png";
             .map((pastel) => pastel.name)}
           icon="cake"
         />
-        <CakeFlavs
-          image={rebanada}
-          alt="Pastel Tamaño Tradicional."
-          title="Rebanada Anytime"
-          price={159}
-          flavors={pasteles
-            .filter((p) => p.rebanadaAnytime === true)
-            .map((pastel) => pastel.name)}
-          extra="*Disponible únicamente en sucursal Herradura."
-          icon="slice"
-        />
       </ul>
       <ul
         class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
