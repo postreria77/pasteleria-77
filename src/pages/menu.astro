@@ -1,6 +1,7 @@
 ---
-//Database imports
+// Database imports
 import { db, Pasteles, Productos, Bebidas, eq, desc, and } from "astro:db";
+
 const pasteles = await db
   .select()
   .from(Pasteles)
@@ -27,7 +28,7 @@ const orejas = await db
 
 const bebidas = await db.select().from(Bebidas);
 
-//Component imports
+// Component imports
 import Layout from "../layouts/Layout.astro";
 import PastelesCard from "../components/PastelesCard.astro";
 import ProductCard from "../components/ProductCard.astro";
@@ -36,10 +37,9 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Button from "../components/ui/Button.astro";
 
-//Image imports
+// Image imports
 import tradicional from "../assets/menu/tradicional.png";
 import anytime from "../assets/menu/anytime.png";
-import rebanada from "../assets/menu/rebanada.png";
 import bebida from "../assets/menu/bebidas.webp";
 import cafe from "../assets/menu/cafe.png";
 import cafeBg from "../assets/menu/cafe-bg.png";
@@ -57,9 +57,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       <div
         class="flex flex-row-reverse items-end justify-between gap-4 sm:flex-col sm:items-stretch"
       >
-        <h1
-          class="text-right text-2xl font-bold uppercase sm:text-4xl lg:text-5xl"
-        >
+        <h1 class="text-right text-2xl font-bold uppercase sm:text-4xl lg:text-5xl">
           Menú
         </h1>
         <h2 class="text-xl font-bold uppercase sm:text-2xl">Pasteles</h2>
@@ -86,31 +84,23 @@ import cafeBg from "../assets/menu/cafe-bg.png";
           icon="cake"
         />
       </ul>
-      <ul
-        class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
-      >
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
       </ul>
     </header>
-    <!-- Panques -->
-    <section
-      class="xs:py-12 mx-2 flex flex-col gap-8 bg-dark px-page sm:mx-4 sm:gap-12 sm:py-16 lg:gap-16 lg:py-20"
-    >
+
+    <!-- Panqués -->
+    <section class="xs:py-12 mx-2 flex flex-col gap-8 bg-dark px-page sm:mx-4 sm:gap-12 sm:py-16 lg:gap-16 lg:py-20">
       <h2 class="text-xl font-bold uppercase sm:text-2xl">Panqués</h2>
-      <ul
-        class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
-      >
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         {panques.map((panque) => <ProductCard {...panque} />)}
       </ul>
     </section>
+
     <!-- Postres -->
-    <section
-      class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
-    >
+    <section class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16">
       <h2 class="text-xl font-bold uppercase sm:text-2xl">Postres</h2>
-      <ul
-        class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
-      >
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         <div>
           <ProductCard
             image="/images/menu/conchas.webp"
@@ -119,17 +109,13 @@ import cafeBg from "../assets/menu/cafe-bg.png";
             description="Pan dulce de la casa, amasadas con nata 100% de granja y mantequilla Gloria Gourmet."
           />
           <div class="mt-4 flex flex-col">
-            <h5 class="text-[10px] font-medium lg:text-base">
-              Sabores disponibles:
-            </h5>
+            <h5 class="text-[10px] font-medium lg:text-base">Sabores disponibles:</h5>
             <p class="text-[10px] opacity-60 lg:text-sm">
               Vanilla, Chocolate Abuelita, Mazapán, Churro, Nuez.
             </p>
           </div>
           <div class="mt-4 flex flex-col">
-            <h5 class="text-[10px] font-medium lg:text-base">
-              Rellenos Disponibles:
-            </h5>
+            <h5 class="text-[10px] font-medium lg:text-base">Rellenos Disponibles:</h5>
             <div class="flex items-center justify-between">
               <p class="text-[10px] opacity-60 lg:text-sm">Nutella</p>
               <span class="text-[10px] lg:text-sm">$35</span>
@@ -152,30 +138,24 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         }
       </ul>
     </section>
+
     <!-- Orejas -->
-<section
-  class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
->
-  <h2 class="text-xl font-bold uppercase sm:text-2xl">Orejas</h2>
-  <ul
-    class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8"
-  >
-    {orejas.map((producto) => <ProductCard {...producto} />)}
-  </ul>
-</section>
+    <section class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16">
+      <h2 class="text-xl font-bold uppercase sm:text-2xl">Orejas</h2>
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
+        {orejas.map((producto) => <ProductCard {...producto} />)}
+      </ul>
+    </section>
+
     <!-- Café Banner -->
-    <section
-      class="relative mx-2 min-h-96 border-b-8 border-t-8 border-b-brand border-t-brand bg-dark-2 sm:mx-4 sm:border-b-[16px] sm:border-t-[16px]"
-    >
+    <section class="relative mx-2 min-h-96 border-b-8 border-t-8 border-b-brand border-t-brand bg-dark-2 sm:mx-4 sm:border-b-[16px] sm:border-t-[16px]">
       <Image
         src={cafeBg}
         alt="Fondo de ladrillos"
         aaria-hidden="true"
         class="absolute inset-0 h-full w-full object-cover object-bottom"
       />
-      <div
-        class="relative flex h-full w-full flex-col-reverse items-center gap-12 px-page pt-8 sm:flex-row lg:gap-20"
-      >
+      <div class="relative flex h-full w-full flex-col-reverse items-center gap-12 px-page pt-8 sm:flex-row lg:gap-20">
         <Image
           src={cafe}
           alt="Cafe"
@@ -196,8 +176,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
               class="aspect-[8/1.5] h-full w-full origin-bottom object-bottom"
             />
             <p class="text-base leading-relaxed lg:text-xl">
-              Un Café de Micro lote único, cosechado exclusivamente para Grupo
-              Postreria y nuestros clientes más especiales.
+              Un Café de Micro lote único, cosechado exclusivamente para Grupo Postreria y nuestros clientes más especiales.
             </p>
           </div>
           <div class="flex">
@@ -212,13 +191,10 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         </div>
       </div>
     </section>
+
     <!-- Bebidas -->
-    <section
-      class="sm:;gap-12 mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 lg:gap-16"
-    >
-      <div
-        class="flex flex-col bg-dark-2 p-4 text-light sm:flex-row sm:items-center sm:gap-8 sm:p-8 lg:gap-16"
-      >
+    <section class="sm:;gap-12 mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 lg:gap-16">
+      <div class="flex flex-col bg-dark-2 p-4 text-light sm:flex-row sm:items-center sm:gap-8 sm:p-8 lg:gap-16">
         <Image
           src={bebida}
           alt="Lattes para llevar."
@@ -228,9 +204,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
           <div class="flex flex-col gap-1">
             <h2 class="text-xl font-bold uppercase sm:text-2xl">Bebidas</h2>
             <p class="text-xs font-light sm:text-sm">
-              *Disponibles únicamente en sucursal <span class="font-bold"
-                >Herradura</span
-              >
+              *Disponibles únicamente en sucursal <span class="font-bold">Herradura</span>
             </p>
           </div>
           <div class="flex flex-col gap-4 sm:gap-6">
