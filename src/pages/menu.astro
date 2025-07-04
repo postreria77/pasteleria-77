@@ -19,7 +19,7 @@ const postres = await db
   .where(and(eq(Productos.categoryId, 2), eq(Productos.archived, false)))
   .orderBy(desc(Productos.nuevo));
 
-const conchasWaffle = await db
+const orejas = await db
   .select()
   .from(Productos)
   .where(and(eq(Productos.categoryId, 4), eq(Productos.archived, false)))
@@ -163,7 +163,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         }
       </ul>
     </section>
-    <!-- Conchas Waffle -->
+    <!-- Orejas  -->
     <section
       class="mx-2 flex flex-col gap-8 bg-dark px-page py-20 sm:mx-4 sm:gap-12 lg:gap-16"
     >
