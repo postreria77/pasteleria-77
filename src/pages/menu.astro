@@ -62,7 +62,7 @@ import cafeBg from "../assets/menu/cafe-bg.png";
         </h1>
         <h2 class="text-xl font-bold uppercase sm:text-2xl">Pasteles</h2>
       </div>
-      <ul class="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-12">
+      <ul class="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12">
   <li class="flex flex-col items-center justify-between h-full">
     <CakeFlavs
       image={tradicional}
@@ -87,19 +87,8 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       icon="cake"
     />
   </li>
-  <li class="flex flex-col items-center justify-between h-full">
-    <CakeFlavs
-      image={tradicional}
-      alt="Pastel Tamaño Gift."
-      title="Tamaño Gift"
-      price={350}
-      flavors={pasteles
-        .filter((p) => p.gift === true)
-        .map((pastel) => pastel.name)}
-      icon="cake"
-    />
-  </li>
- </ul>
+</ul>
+
       <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
       </ul>
