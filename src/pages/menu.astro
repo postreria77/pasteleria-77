@@ -83,6 +83,16 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       .map((pastel) => pastel.name)}
     icon="cake"
   />
+  <CakeFlavs
+    image={anytime}
+    alt="Pastel Tamaño Anytime."
+    title="Tamaño Anytime"
+    price={620}
+    flavors={pasteles
+      .filter((p) => p.anytime === true)
+      .map((pastel) => pastel.name)}
+    icon="cake"
+  />
 </ul>
       <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         {pasteles.map((pastel) => <PastelesCard {...pastel} />)}
