@@ -84,12 +84,12 @@ import cafeBg from "../assets/menu/cafe-bg.png";
     icon="cake"
   />
   <CakeFlavs
-    image={src/assets/menu/gift.png}
+    image={gift}
     alt="Pastel Tamaño Anytime."
     title="Tamaño Gift"
     price={350}
     flavors={pasteles
-      .filter((p) => p.gift === true)
+      .filter((p) => p.anytime === true)
       .map((pastel) => pastel.name)}
     icon="cake"
   />
