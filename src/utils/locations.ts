@@ -27,7 +27,7 @@ export const locations: Location[] = [
     name: "Herradura (Monterrey)",
     image: "/images/sucursales/herradura.jpg",
     address:
-      "Carretera Nacional 1000 A, Esq. Portal del Huajuco Col. La Herradura Carretera Nacional 67140 Monterrey, Nuevo León.",
+      "Av. Portal del Huajuco 100-Oriente, Col. El Uro, 64985 Monterrey, N.L.",
     phone: "81 2474 8801",
     hours: [
       "Lunes a Sábado / 9:00 - 21:00 hrs.",
