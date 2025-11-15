@@ -73,21 +73,22 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       .map((pastel) => pastel.name)}
     icon="cake"
   />
-<CakeFlavs
-    image={tradicional}
-    alt="Pastel Tamaño Tradicional."
-    title="Tamaño Tradicional"
-    price={1340}
-    flavors={pasteles
-      .filter((p) => p.tradicional === true)
-      .map((pastel) => pastel.name)}
-    icon="cake"
-  />
+
   <CakeFlavs
     image={anytime}
     alt="Pastel Tamaño Anytime."
     title="Tamaño Anytime"
     price={650}
+    flavors={pasteles
+      .filter((p) => p.anytime === true)
+      .map((pastel) => pastel.name)}
+    icon="cake"
+  />
+<CakeFlavs
+    image={anytime}
+    alt="Pastel Tamaño Anytime."
+    title="Tamaño Anytime"
+    price={370}
     flavors={pasteles
       .filter((p) => p.anytime === true)
       .map((pastel) => pastel.name)}
