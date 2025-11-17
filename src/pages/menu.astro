@@ -40,7 +40,6 @@ import Button from "../components/ui/Button.astro";
 // Image imports
 import tradicional from "../assets/menu/tradicional.png";
 import anytime from "../assets/menu/anytime.png";
-import gift from "../assets/menu/gift.png";
 import bebida from "../assets/menu/bebidas.webp";
 import cafe from "../assets/menu/cafe.png";
 import cafeBg from "../assets/menu/cafe-bg.png";
@@ -85,7 +84,12 @@ import cafeBg from "../assets/menu/cafe-bg.png";
       .map((pastel) => pastel.name)}
     icon="cake"
   />
-
+---
+// importa la imagen como metadata para astro:assets
+import gift from '../assets/menu/gift.png?metadata';
+import CakeFlavs from '../components/CakeFlavs.astro';
+import pasteles from '../data/pasteles.js';
+---
 <CakeFlavs
     image={gift}
 alt="Pastel Tamaño Gift."
