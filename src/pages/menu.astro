@@ -70,9 +70,7 @@ import gift from "../assets/menu/gift.png?metadata";
     alt="Pastel Tamaño Tradicional."
     title="Tamaño Tradicional"
     price={1340}
-    flavors={pasteles
-      .filter((p) => p.tradicional === true)
-      .map((pastel) => pastel.name)}
+    flavors={pasteles.filter((p) => p.tradicional === true).map((pastel) => pastel.name)}
     icon="cake"
   />
 
@@ -81,25 +79,17 @@ import gift from "../assets/menu/gift.png?metadata";
     alt="Pastel Tamaño Anytime."
     title="Tamaño Anytime"
     price={650}
-    flavors={pasteles
-      .filter((p) => p.anytime === true)
-      .map((pastel) => pastel.name)}
+    flavors={pasteles.filter((p) => p.anytime === true).map((pastel) => pastel.name)}
     icon="cake"
   />
----
-// importa la imagen como metadata para astro:assets
-import gift from '../assets/menu/gift.png?metadata';
-import CakeFlavs from '../components/CakeFlavs.astro';
-import pasteles from '../data/pasteles.js';
----
-<CakeFlavs
+
+  <!-- -- ESTA ES LA INSTANCIA CORREGIDA PARA GIFT -- -->
+  <CakeFlavs
     image={gift}
-alt="Pastel Tamaño Gift."
+    alt="Pastel Tamaño Gift."
     title="Tamaño Gift"
     price={370}
- flavors={pasteles
-      .filter((p) => p.gift === true)
-      .map((pastel) => pastel.name)}
+    flavors={pasteles.filter((p) => p.gift === true).map((pastel) => pastel.name)}
     icon="cake"
   />
 </ul>
