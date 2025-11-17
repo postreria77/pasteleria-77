@@ -43,6 +43,7 @@ import anytime from "../assets/menu/anytime.png";
 import bebida from "../assets/menu/bebidas.webp";
 import cafe from "../assets/menu/cafe.png";
 import cafeBg from "../assets/menu/cafe-bg.png";
+import gift from "../assets/menu/gift.png";
 ---
 
 <Layout
@@ -80,6 +81,21 @@ import cafeBg from "../assets/menu/cafe-bg.png";
     flavors={pasteles.filter((p) => p.anytime === true).map((pastel) => pastel.name)}
     icon="cake"
   />
+<CakeFlavs
+  image={gift}
+  alt="Pastel Tamaño Gift."
+  title="Tamaño Gift"
+  price={370}
+  flavors={[
+    "Pecan",
+    "Charol",
+    "Red",
+    "Ferrero",
+    "Pistache",
+    "Zanahoria",
+  ]}
+  icon="cake"
+/>
 
 
 </ul>
